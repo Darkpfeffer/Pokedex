@@ -1,5 +1,6 @@
 // reference: https://pokedex.org/
 let pokemonList= [];
+
 let pokemon1= {
     name: 'Bulbasaur',
     // height in cm
