@@ -21,5 +21,5 @@ let pokemon3= {
 pokemonList= [pokemon1, pokemon2, pokemon3];
 
 for (let i= 0; i< pokemonList.length; i++) {
-    document.write('<p>'+ pokemonList[i].name+ '</p>')
+    document.write('<p>'+ 'Name: '+ pokemonList[i].name+ ', Height: '+ pokemonList[i].height+ '</p>')
 }
