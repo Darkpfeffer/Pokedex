@@ -3,6 +3,7 @@ body {
     margin-left: 10px; 
 }
 
+/* Make pokemon Name and Height category bold*/
 .pokemon-name {
     font-weight: bold;
 }
