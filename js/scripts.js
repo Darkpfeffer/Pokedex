@@ -61,9 +61,8 @@ let pokemonRepository= (function() {
   
   pokemonRepository.add({name: 'Bulbasaur', height: 70, types: ['grass', 'poison']});
   
-  let pokemonList= pokemonRepository.getAll();
-  console.log(pokemonList)
-  document.write('<p>'+ 'Some text '+ pokemonList+ '</p>')
+  console.log(pokemonRepository.getAll())
+  document.write('<p>'+ 'Some text '+ pokemonRepository.getAll()+ '</p>')
 
 /* old code before IIFE
 
