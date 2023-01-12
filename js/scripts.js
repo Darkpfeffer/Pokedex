@@ -54,11 +54,10 @@ let pokemonRepository= (function() {
           '</p>')
     } */
   
-  pokemonRepository.add({name: 'Bulbasaur', height: 70, types: [' grass', ' poison']});
+pokemonRepository.add({name: 'Bulbasaur', height: 70, types: [' grass', ' poison']});
   
-  let pokemonList= pokemonRepository.getAll()
 
-pokemonList.forEach(function(pokemon) {
+pokemonRepository.getAll().forEach(function(pokemon) {
     if(pokemon.height > 65) {
         document.write('<p>'+
         '<span class=pokemon-name>Name: </span>'+
