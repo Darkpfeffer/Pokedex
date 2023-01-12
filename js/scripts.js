@@ -16,28 +16,13 @@ let pokemonRepository= (function() {
         getAll: getAll,
     }
   })();
-  
-// Loop to write a list of the pokemons' name and height.
-/* ppokemonList.forEach(function(pokemon) {
-    if(pokemon.height > 65) {
-        document.write('<p>'+ 
-        '<span class=pokemon-name>Name: </span>'+ 
-        pokemon.name+ '<span class=pokemon-height> Height: </span>'+ 
-        pokemon.height+ 
-        ' - Wow, that\'s big'+ 
-        '</p>')
-    } else {
-        document.write('<p>'+
-         '<span class=pokemon-name>Name: </span>'+ 
-         pokemon.name+ 
-         '<span class=pokemon-height> Height: </span>'+
-          pokemon.height+ 
-          '</p>')
-    } */
-  
+
+
 pokemonRepository.add({name: 'Bulbasaur', height: 70, types: [' grass', ' poison']});
 pokemonRepository.add({name: 'Charmander', height: 60, types: ['fire']});
 pokemonRepository.add({name: 'Squirtle', height: 50, types: ['water']});
+
+// Loop to write a list of the pokemons' name and height.
   
 
 pokemonRepository.getAll().forEach(function(pokemon) {
