@@ -4,7 +4,11 @@ let pokemonRepository= (function() {
 
     // push pokemon data to 'pokemonList'
     function add(pokemon) {
-        pokemonList.push(pokemon)
+        if(typeof pokemon=== 'object') {
+            pokemonList.push(pokemon)
+        } else {
+            console.log(`It's not an object`)
+        }
     }
   
     function getAll() {
@@ -22,6 +26,7 @@ let pokemonRepository= (function() {
 pokemonRepository.add({name: 'Bulbasaur', height: 70, types: [' grass', ' poison']});
 pokemonRepository.add({name: 'Charmander', height: 60, types: ['fire']});
 pokemonRepository.add({name: 'Squirtle', height: 50, types: ['water']});
+
 
 // Loop to write a list of the pokemons' name and height.
   
