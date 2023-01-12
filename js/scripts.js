@@ -17,6 +17,7 @@ let pokemonRepository= (function() {
     }
   })();
 
+// Add pokemons to pokemonList
 
 pokemonRepository.add({name: 'Bulbasaur', height: 70, types: [' grass', ' poison']});
 pokemonRepository.add({name: 'Charmander', height: 60, types: ['fire']});
