@@ -26,7 +26,7 @@ let pokemonRepository= (function() {
         add: add,
         getAll: getAll,
     }
-  })();
+})();
 
 // Add pokemons to pokemonList
 
