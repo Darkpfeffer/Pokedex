@@ -30,14 +30,9 @@ let pokemonRepository= (function() {
        return pokemonList;
     }
   
-    function getAllName() {
-        return pokemonList.name
-    }
-  
     return {
         add: add,
         getAll: getAll,
-        getAllName: getAllName
     }
   })();
   
@@ -59,10 +54,31 @@ let pokemonRepository= (function() {
           '</p>')
     } */
   
-  pokemonRepository.add({name: 'Bulbasaur', height: 70, types: ['grass', 'poison']});
+  pokemonRepository.add({name: 'Bulbasaur', height: 70, types: [' grass', ' poison']});
   
-  console.log(pokemonRepository.getAll())
-  document.write('<p>'+ 'Some text '+ pokemonRepository.getAll()+ '</p>')
+  let pokemonList= pokemonRepository.getAll()
+
+pokemonList.forEach(function(pokemon) {
+    if(pokemon.height > 65) {
+        document.write('<p>'+
+        '<span class=pokemon-name>Name: </span>'+
+        pokemon.name+
+        '<span class=pokemon-height> Height: </span>'+
+        pokemon.height+
+        ' - Wow, that\'s big'+
+        '<span class=pokemon-types> Types: </span>'+
+        pokemon.types+ '</p>')
+    } else {
+        document.write('<p>'+
+            '<span class=pokemon-name>Name: </span>'+ 
+            pokemon.name+ 
+            '<span class=pokemon-height> Height: </span>'+
+            pokemon.height+
+            '<span class=pokemon-types> Types: </span>'+
+            pokemon.types+
+            '</p>')
+    }
+})
 
 /* old code before IIFE
 

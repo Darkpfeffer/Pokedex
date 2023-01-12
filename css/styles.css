@@ -4,11 +4,14 @@ body {
 }
 
 /* Make pokemon Name and Height category bold*/
-.pokemon-name {
+.pokemon-name, .pokemon-height, .pokemon-types {
     font-weight: bold;
 }
 
 .pokemon-height {
-    font-weight: bold;
+   margin-left: 15px;
+}
+
+.pokemon-types {
     margin-left: 15px;
 }
