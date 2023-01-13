@@ -32,27 +32,25 @@ pokemonRepository.add({name: 'Bulbasaur', height: 70, types: [' grass', ' poison
 pokemonRepository.add({name: 'Charmander', height: 60, types: ['fire']});
 pokemonRepository.add({name: 'Squirtle', height: 50, types: ['water']});
 
-// Loop to write a list of the pokemons' name and height.
-  
+// Loop to write a list of the pokemons' name and height.  
+
+/* let listItem= document.createElement('li');
+let button= document.createElement('button');
+//button.innerText= pokemon.name
+let pokemonList= document.querySelector('.pokemon-list') */
 
 pokemonRepository.getAll().forEach(function(pokemon) {
+    let pokemonList= document.querySelector('.pokemon-list')
+    let createListItem= document.createElement('li');
+    let button= document.createElement('button');
+    button.innerText= pokemon.name;
+    let listItem= pokemonList.querySelector('li');
+
     if(pokemon.height > 65) {
-        document.write('<p>'+
-        '<span class=pokemon-name>Name: </span>'+
-        pokemon.name+
-        '<span class=pokemon-height> Height: </span>'+
-        pokemon.height+
-        ' - Wow, that\'s big'+
-        '<span class=pokemon-types> Types: </span>'+
-        pokemon.types+ '</p>')
+        document.querySelector('.pokemon-list');
+        pokemonList.appendChild(createListItem);
+
     } else {
-        document.write('<p>'+
-            '<span class=pokemon-name>Name: </span>'+ 
-            pokemon.name+ 
-            '<span class=pokemon-height> Height: </span>'+
-            pokemon.height+
-            '<span class=pokemon-types> Types: </span>'+
-            pokemon.types+
-            '</p>')
+        document.querySelector('.pokemon-list')
     }
 })
