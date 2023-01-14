@@ -20,9 +20,22 @@ let pokemonRepository= (function() {
        return pokemonList;
     }
     
+    function addListItem(pokemon) {
+        let pokemonListFolder= document.querySelector('.pokemon-list')
+        let createListItem= document.createElement('li');
+        let button= document.createElement('button');
+        button.innerText= pokemon.name;
+        document.querySelector('.pokemon-list');
+        pokemonListFolder.appendChild(createListItem);
+        pokemonListFolder.lastElementChild.appendChild(button);
+        let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
+        buttonSelect.classList.add(pokemon.typeClass);
+    }
+
     return {
         add: add,
         getAll: getAll,
+        addListItem: addListItem
     }
 })();
 
@@ -40,25 +53,6 @@ let button= document.createElement('button');
 let pokemonList= document.querySelector('.pokemon-list') */
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-    let pokemonListFolder= document.querySelector('.pokemon-list')
-    let createListItem= document.createElement('li');
-    let button= document.createElement('button');
-    button.innerText= pokemon.name;
-
-
-    if(pokemon.height > 65) {
-        document.querySelector('.pokemon-list');
-        pokemonListFolder.appendChild(createListItem);
-        pokemonListFolder.lastElementChild.appendChild(button);
-        let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
-        buttonSelect.classList.add(pokemon.typeClass);
-
-    } else {
-        document.querySelector('.pokemon-list');
-        pokemonListFolder.appendChild(createListItem);
-        pokemonListFolder.lastElementChild.appendChild(button);
-        // button.classList.add(pokemon.types)
-        let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
-        buttonSelect.classList.add(pokemon.typeClass);
-    }
+    
+    pokemonRepository.addListItem(pokemon);
 })
