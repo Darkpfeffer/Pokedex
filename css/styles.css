@@ -11,8 +11,26 @@ body {
 }
 
 button {
+    width: 30%;
+    height: 100px;
     margin-top: 15px;
+    border-radius: 8px;
+    border: none;
+    border-right: 4px solid rgba(0, 0, 0, 0.8);
+    border-bottom: 8px solid rgba(0, 0, 0, 0.8);
 }
+
+button:hover, button:focus {
+    border-right: 2px solid rgba(0, 0, 0, 0.8);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.8);
+    transition-duration: 0.5s;
+}
+
+button:active {
+    transition-duration: 0.3s;
+    border: none;
+}
+
 
 ul {
     list-style-type: none;
@@ -31,6 +49,6 @@ ul {
 }
 
 .pokemontype__grassPoison {
-    background-image:linear-gradient(to right, var(--grass) 50%, var(--poison) 50%);
+    background-image:linear-gradient(30deg, var(--grass) 50%, var(--poison) 50%);
     color: #fff;
 }
