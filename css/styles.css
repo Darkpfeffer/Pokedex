@@ -1,8 +1,12 @@
 :root {
     --grass: rgba(50, 129, 63, 1);
-    --poison: rgba(83, 49, 125, 1);
+    --grassOpacity: rgba(32, 80, 40, 1);
+    --poison: rgba(49, 29, 73, 1);
+    --poisonOpacity: rgba(83, 49, 125, 1);
     --fire: rgba(163, 15, 15, 1);
-    --water: rgb(14, 126, 154, 1);
+    --fireOpacity:rgba(103, 9, 9, 1);
+    --water: rgba(14, 126, 154, 1);
+    --waterOpacity: rgba(11, 83, 102, 1);
 }
 
 body {
@@ -39,16 +43,16 @@ ul {
 /* Make pokemon types button background be the color of the types */
 
 .pokemontype__fire {
-    background-color: var(--fire);
+    background-image:linear-gradient(to right, var(--fire), var(--fireOpacity));
     color: #fff;
 }
 
 .pokemontype__water {
-    background-color: var(--water);
+    background-image:linear-gradient(to right, var(--water), var(--waterOpacity));
     color: #fff;
 }
 
 .pokemontype__grassPoison {
-    background-image:linear-gradient(30deg, var(--grass) 50%, var(--poison) 50%);
+    background-image:linear-gradient(to right, var(--grass), var(--grassOpacity), var(--poison), var(--poisonOpacity));
     color: #fff;
 }
