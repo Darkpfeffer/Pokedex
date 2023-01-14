@@ -15,11 +15,11 @@ let pokemonRepository= (function() {
             console.log(`Not valid!`)
         }
     }
-  
+
     function getAll() {
        return pokemonList;
     }
-  
+    
     return {
         add: add,
         getAll: getAll,
@@ -50,7 +50,6 @@ pokemonRepository.getAll().forEach(function(pokemon) {
         document.querySelector('.pokemon-list');
         pokemonListFolder.appendChild(createListItem);
         pokemonListFolder.lastElementChild.appendChild(button);
-        // button.classList.add(pokemon.types)
         let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
         buttonSelect.classList.add(pokemon.typeClass);
 
