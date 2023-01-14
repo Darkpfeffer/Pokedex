@@ -10,23 +10,24 @@
 }
 
 body {
-    font-size: 16px;
-    margin-left: 10px; 
+    font-size: 2vh;
+    margin-left: 1%; 
 }
 
 button {
+    font-size: 2vh;
     width: 30%;
-    height: 100px;
-    margin-top: 15px;
+    height: 12vh;
+    margin: 2% 0;
     border-radius: 8px;
     border: none;
-    border-right: 4px solid rgba(0, 0, 0, 0.8);
-    border-bottom: 8px solid rgba(0, 0, 0, 0.8);
+    border-right: 0.5vh solid rgba(0, 0, 0, 0.8);
+    border-bottom: 1vh solid rgba(0, 0, 0, 0.8);
 }
 
 button:hover, button:focus {
-    border-right: 2px solid rgba(0, 0, 0, 0.8);
-    border-bottom: 4px solid rgba(0, 0, 0, 0.8);
+    border-right: 0.25vh solid rgba(0, 0, 0, 0.8);
+    border-bottom: 0.5vh solid rgba(0, 0, 0, 0.8);
     transition-duration: 0.5s;
 }
 
@@ -55,4 +56,16 @@ ul {
 .pokemontype__grassPoison {
     background-image:linear-gradient(to right, var(--grass), var(--grassOpacity), var(--poison), var(--poisonOpacity));
     color: #fff;
+}
+
+@media all and (max-width:750px) {
+    button {
+        font-size: 1.5vh;
+    }
+}
+
+@media all and (max-width:450px) {
+    button {
+        font-size: 1.25vh;
+    }
 }
