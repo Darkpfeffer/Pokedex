@@ -1,17 +1,36 @@
+:root {
+    --grass: rgba(50, 129, 63, 1);
+    --poison: rgba(83, 49, 125, 1);
+    --fire: rgba(163, 15, 15, 1);
+    --water: rgb(14, 126, 154, 1);
+}
+
 body {
     font-size: 16px;
     margin-left: 10px; 
 }
 
-/* Make pokemon Name and Height category bold*/
-.pokemon-name, .pokemon-height, .pokemon-types {
-    font-weight: bold;
+button {
+    margin-top: 15px;
 }
 
-.pokemon-height {
-   margin-left: 15px;
+ul {
+    list-style-type: none;
 }
 
-.pokemon-types {
-    margin-left: 15px;
+/* Make pokemon types button background be the color of the types */
+
+.pokemontype__fire {
+    background-color: var(--fire);
+    color: #fff;
+}
+
+.pokemontype__water {
+    background-color: var(--water);
+    color: #fff;
+}
+
+.pokemontype__grassPoison {
+    background-image:linear-gradient(to right, var(--grass) 50%, var(--poison) 50%);
+    color: #fff;
 }
