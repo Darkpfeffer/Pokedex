@@ -28,9 +28,9 @@ let pokemonRepository= (function() {
 
 // Add pokemons to pokemonList
 
-pokemonRepository.add({name: 'Bulbasaur', height: 70, types: [' grass', ' poison']});
-pokemonRepository.add({name: 'Charmander', height: 60, types: ['fire']});
-pokemonRepository.add({name: 'Squirtle', height: 50, types: ['water']});
+pokemonRepository.add({name: 'Bulbasaur', height: 70, types: [' grass', ' poison'], typeClass: 'pokemontype__grassPoison'});
+pokemonRepository.add({name: 'Charmander', height: 60, types: ['fire'], typeClass: 'pokemontype__fire'});
+pokemonRepository.add({name: 'Squirtle', height: 50, types: ['water'], typeClass: 'pokemontype__water'});
 
 // Loop to write a list of the pokemons' name and height.  
 
@@ -40,17 +40,26 @@ let button= document.createElement('button');
 let pokemonList= document.querySelector('.pokemon-list') */
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-    let pokemonList= document.querySelector('.pokemon-list')
+    let pokemonListFolder= document.querySelector('.pokemon-list')
     let createListItem= document.createElement('li');
     let button= document.createElement('button');
     button.innerText= pokemon.name;
-    let listItem= pokemonList.querySelector('li');
+
 
     if(pokemon.height > 65) {
         document.querySelector('.pokemon-list');
-        pokemonList.appendChild(createListItem);
+        pokemonListFolder.appendChild(createListItem);
+        pokemonListFolder.lastElementChild.appendChild(button);
+        // button.classList.add(pokemon.types)
+        let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
+        buttonSelect.classList.add(pokemon.typeClass);
 
     } else {
-        document.querySelector('.pokemon-list')
+        document.querySelector('.pokemon-list');
+        pokemonListFolder.appendChild(createListItem);
+        pokemonListFolder.lastElementChild.appendChild(button);
+        // button.classList.add(pokemon.types)
+        let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
+        buttonSelect.classList.add(pokemon.typeClass);
     }
 })
