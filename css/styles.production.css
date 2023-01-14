@@ -1,0 +1,77 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+body {
+    font-size: 2vh;
+    margin-left: 1%; 
+}
+
+button {
+    font-size: 2vh;
+    width: 30%;
+    height: 12vh;
+    margin: 2% 0;
+    border-radius: 8px;
+    border: none;
+    border-right: 0.5vh solid rgba(0, 0, 0, 0.8);
+    border-bottom: 1vh solid rgba(0, 0, 0, 0.8);
+}
+
+button:hover, button:focus {
+    border-right: 0.25vh solid rgba(0, 0, 0, 0.8);
+    border-bottom: 0.5vh solid rgba(0, 0, 0, 0.8);
+    -webkit-transition-duration: 0.5s;
+         -o-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+}
+
+button:active {
+    -webkit-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    border: none;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+/* Make pokemon types button background be the color of the types */
+
+.pokemontype__fire {
+    background-image:-webkit-gradient(linear, left top, right top, from(rgba(163, 15, 15, 1)), to(rgba(103, 9, 9, 1)));
+    background-image:-o-linear-gradient(left, rgba(163, 15, 15, 1), rgba(103, 9, 9, 1));
+    background-image:linear-gradient(to right, rgba(163, 15, 15, 1), rgba(103, 9, 9, 1));
+    color: #fff;
+}
+
+.pokemontype__water {
+    background-image:-webkit-gradient(linear, left top, right top, from(rgba(14, 126, 154, 1)), to(rgba(11, 83, 102, 1)));
+    background-image:-o-linear-gradient(left, rgba(14, 126, 154, 1), rgba(11, 83, 102, 1));
+    background-image:linear-gradient(to right, rgba(14, 126, 154, 1), rgba(11, 83, 102, 1));
+    color: #fff;
+}
+
+.pokemontype__grassPoison {
+    background-image:-webkit-gradient(linear, left top, right top, from(rgba(50, 129, 63, 1)), color-stop(rgba(32, 80, 40, 1)), color-stop(rgba(49, 29, 73, 1)), to(rgba(83, 49, 125, 1)));
+    background-image:-o-linear-gradient(left, rgba(50, 129, 63, 1), rgba(32, 80, 40, 1), rgba(49, 29, 73, 1), rgba(83, 49, 125, 1));
+    background-image:linear-gradient(to right, rgba(50, 129, 63, 1), rgba(32, 80, 40, 1), rgba(49, 29, 73, 1), rgba(83, 49, 125, 1));
+    color: #fff;
+}
+
+@media all and (max-width:750px) {
+    button {
+        font-size: 1.5vh;
+    }
+}
+
+@media all and (max-width:450px) {
+    button {
+        font-size: 1.25vh;
+    }
+}
