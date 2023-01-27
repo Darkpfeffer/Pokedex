@@ -21,21 +21,35 @@ let pokemonRepository= (function() {
     }
     
     function addListItem(pokemon) {
+        // Organizing the functions & selectors
         let pokemonListFolder= document.querySelector('.pokemon-list')
         let createListItem= document.createElement('li');
         let button= document.createElement('button');
+
+        //Create a button for each pokemon added
         button.innerText= pokemon.name;
         document.querySelector('.pokemon-list');
         pokemonListFolder.appendChild(createListItem);
         pokemonListFolder.lastElementChild.appendChild(button);
         let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
         buttonSelect.classList.add(pokemon.typeClass);
+
+        // Create an event listener to every button -> Pokémon information
+        buttonSelect.addEventListener('click', function () {
+            showDetails(pokemon);
+        });
+    }
+
+    function showDetails(pokemon) {
+
+        console.log('Name: '+ pokemon.name+ ', '+ 'Height: '+ pokemon.height+ 'cm, '+ 'Types: '+ pokemon.types+ '.');
     }
 
     return {
         add: add,
         getAll: getAll,
-        addListItem: addListItem
+        addListItem: addListItem,
+        showDetails: showDetails
     }
 })();
 
@@ -45,14 +59,11 @@ pokemonRepository.add({name: 'Bulbasaur', height: 70, types: [' grass', ' poison
 pokemonRepository.add({name: 'Charmander', height: 60, types: ['fire'], typeClass: 'pokemontype__fire'});
 pokemonRepository.add({name: 'Squirtle', height: 50, types: ['water'], typeClass: 'pokemontype__water'});
 
-// Loop to write a list of the pokemons' name and height.  
-
-/* let listItem= document.createElement('li');
-let button= document.createElement('button');
-//button.innerText= pokemon.name
-let pokemonList= document.querySelector('.pokemon-list') */
+// Loop to create a button with each pokémon the 'pokemonList' contains
 
 pokemonRepository.getAll().forEach(function(pokemon) {
     
     pokemonRepository.addListItem(pokemon);
+
+
 })
