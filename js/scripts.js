@@ -1,6 +1,7 @@
 // reference: https://pokedex.org/
 let pokemonRepository= (function() {
     let pokemonList= [];
+    let apiUrl= 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     // push pokemon data to 'pokemonList'
     function add(pokemon) {
@@ -45,7 +46,21 @@ let pokemonRepository= (function() {
         console.log('Name: '+ pokemon.name+ ', '+ 'Height: '+ pokemon.height+ 'cm, '+ 'Types: '+ pokemon.types+ '.');
     }
 
-    function loadList() {}
+    function loadList() {
+        return fetch(apiUrl).then(function (response) {
+            roturn response.json();
+        }).then(function (json) {
+            json.results.forEach(function (item) {
+                let pokemon= {
+                    name: item.name,
+                    detailsUrl: item.url
+                };
+                add(pokemon);
+            });
+        }).catch(function (e) {
+            console.error(e)
+        })
+    }
 
     function loadDetails() {}
 
