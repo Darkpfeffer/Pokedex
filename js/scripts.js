@@ -45,11 +45,17 @@ let pokemonRepository= (function() {
         console.log('Name: '+ pokemon.name+ ', '+ 'Height: '+ pokemon.height+ 'cm, '+ 'Types: '+ pokemon.types+ '.');
     }
 
+    function loadList() {}
+
+    function loadDetails() {}
+
     return {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
-        showDetails: showDetails
+        showDetails: showDetails,
+        loadList: loadList,
+        loadDetails: loadDetails
     }
 })();
 
