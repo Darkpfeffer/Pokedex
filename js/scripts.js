@@ -42,8 +42,10 @@ let pokemonRepository= (function() {
     }
 
     function showDetails(pokemon) {
-
-        console.log('Name: '+ pokemon.name+ ', '+ 'Height: '+ pokemon.height+ 'cm, '+ 'Types: '+ pokemon.types+ '.');
+        //console.log('Name: '+ pokemon.name+ ', '+ 'Height: '+ pokemon.height+ 'cm, '+ 'Types: '+ pokemon.types+ '.');
+        loadDetails(pokemon).then(function() {
+            console.log(pokemon);
+        });
     }
 
     //Load pokemon data from external API
@@ -64,7 +66,19 @@ let pokemonRepository= (function() {
         })
     }
 
-    function loadDetails() {}
+    function loadDetails(item) {
+        let url= item.detailsUrl;
+        return fetch(url).then(function (response) {
+            return response.json();
+        }).then(function(details) {
+            //add the details to the item
+            item.imageUrl= details.sprites.front_default;
+            item.height= details.height;
+            item.types= details.types;
+        }).catch(function (e) {
+            console.error(e);
+        })
+    }
 
     return {
         add: add,
