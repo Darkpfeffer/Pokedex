@@ -128,6 +128,7 @@ let pokemonRepository= (function() {
         }).catch(function (e) {
             console.error(e)
         })
+        
     }
 
     function loadDetails(pokemon) {
