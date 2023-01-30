@@ -43,17 +43,17 @@ ul {
 
 /* Make pokemon types button background be the color of the types */
 
-.pokemontype__fire {
+.fire {
     background-image:linear-gradient(to right, var(--fire), var(--fireOpacity));
     color: #fff;
 }
 
-.pokemontype__water {
+.water {
     background-image:linear-gradient(to right, var(--water), var(--waterOpacity));
     color: #fff;
 }
 
-.pokemontype__grassPoison {
+.grassPoison {
     background-image:linear-gradient(to right, var(--grass), var(--grassOpacity), var(--poison), var(--poisonOpacity));
     color: #fff;
 }
