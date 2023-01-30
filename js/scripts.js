@@ -33,10 +33,9 @@ let pokemonRepository= (function() {
     }
 
     function showDetails(pokemon) {
-        let pokemonTypes= pokemon.types;
         //console.log('Name: '+ pokemon.name+ ', '+ 'Height: '+ pokemon.height+ 'cm, '+ 'Types: '+ pokemon.types+ '.');
         loadDetails(pokemon).then(function() {
-            console.log(pokemon);
+            console.log();
         });
     }
 
@@ -67,6 +66,12 @@ let pokemonRepository= (function() {
             pokemon.imageUrl= details.sprites.front_default;
             pokemon.height= details.height;
             pokemon.types= details.types;
+
+            let pokemonTypes= pokemon.types;
+            let typesType= pokemonTypes.type;
+            let typeName= typesType.name;
+
+            console.log(typeName)
         }).catch(function (e) {
             console.error(e);
         })
