@@ -1,12 +1,37 @@
 :root {
-    --grass: rgba(50, 129, 63, 1);
-    --grassOpacity: rgba(32, 80, 40, 1);
-    --poison: rgba(49, 29, 73, 1);
-    --poisonOpacity: rgba(83, 49, 125, 1);
+    --bug: rgba(166, 185, 26, 1);
+    --bugOpacity: rgba(57, 61, 26, 1);
+    --dragon: rgba(111, 53, 252, 1);
+    --dragonOpacity: rgba(57, 28, 130, 1);
+    --electric: rgba(247, 208, 44, 1);
+    --electricOpacity: rgba(157, 132, 32, 1);
+    --fairy: rgba(214, 133, 173, 1);
+    --fairyOpacity: rgba(158, 103, 130, 1);
+    --fighting: rgba(194, 46, 40, 1);
+    --fightingOpacity: rgba(134, 27, 24, 1);
     --fire: rgba(163, 15, 15, 1);
     --fireOpacity:rgba(103, 9, 9, 1);
+    --ghost: rgba(115, 87, 151, 1);
+    --ghostOpacity: rgba(64, 48, 84, 1);
+    --grass: rgba(50, 129, 63, 1);
+    --grassOpacity: rgba(32, 80, 40, 1);
+    --ground: rgba(226, 191, 101, 1);
+    --groundOpacity: rgba(143, 121, 66, 1);
+    --ice: rgba(150, 217, 214, 1);
+    --iceOpacity: rgba(203, 251, 249, 1);
+    --normal: rgba(168, 167, 122, 1);
+    --normalOpacity: rgba(222, 221, 160, 1);
+    --poison: rgba(49, 29, 73, 1);
+    --poisonOpacity: rgba(83, 49, 125, 1);
+    --psychic: rgba(249, 85, 135, 1);
+    --psychicOpacity: rgba(208, 62, 106, 1);
+    --rock: rgba(182, 161, 54, 1);
+    --rockOpacity: rgba(136, 120, 37, 1);
+    --steel: rgba(183, 183, 206, 1);
+    --steelOpacity: rgba(120, 120, 135, 1);
     --water: rgba(14, 126, 154, 1);
     --waterOpacity: rgba(11, 83, 102, 1);
+    
 }
 
 body {
@@ -43,9 +68,57 @@ ul {
 
 /* Make pokemon types button background be the color of the types */
 
+.bug {
+    background-image:linear-gradient(to right, var(--bug), var(--bugOpacity));
+    color: #fff;
+}
+
+.dragon {
+    background-image:linear-gradient(to right, var(--dragon), var(--dragonOpacity));
+    color: #fff;
+}
+
+.electric {
+    background-image: linear-gradient(to right, var(--electric), var(--electricOpacity));
+}
+
+.fairy {
+    background-image:linear-gradient(to right, var(--fairy), var(--fairyOpacity));
+}
+
+.fighting {
+    background-image:linear-gradient(to right, var(--fighting), var(--fightingOpacity));
+}
+
 .fire {
     background-image:linear-gradient(to right, var(--fire), var(--fireOpacity));
     color: #fff;
+}
+
+.grass {
+    background-image: linear-gradient(to right, var(--grass), var(--grassOpacity));
+    color:#fff;
+}
+
+.ground {
+    background-image: linear-gradient(to right, var(--ground), var(--groundOpacity));
+}
+
+.normal {
+    background-image:linear-gradient(to right, var(--normal), var(--normalOpacity));
+}
+
+.poison {
+    background-image: linear-gradient(var(--poison), var(--poisonOpacity));
+    color: #fff;
+}
+
+.psychic {
+    background-image: linear-gradient(var(--psychic), var(--psychicOpacity));
+}
+
+.rock {
+    background-image: linear-gradient(var(--rock), var(--rockOpacity));
 }
 
 .water {
@@ -53,8 +126,71 @@ ul {
     color: #fff;
 }
 
+.bugPoison {
+    background-image:linear-gradient(to right, var(--bug), var(--bugOpacity), var(--poison), var(--poisonOpacity));
+    color: #fff;
+}
+
+.electricSteel {
+    background-image:linear-gradient(to right, var(--electric), var(--electricOpacity), var(--steel), var(--steelOpacity));
+}
+
+.grassBug {
+    background-image:linear-gradient(to right, var(--bug), var(--bugOpacity), var(--grass), var(--grassOpacity));
+}
+
 .grassPoison {
     background-image:linear-gradient(to right, var(--grass), var(--grassOpacity), var(--poison), var(--poisonOpacity));
+    color: #fff;
+}
+
+.groundRock {
+    background-image:linear-gradient(to right, var(--ground), var(--groundOpacity), var(--rock), var(--rockOpacity));
+}
+
+.iceWater {
+    background-image:linear-gradient(to right, var(--ice), var(--iceOpacity), var(--water), var(--waterOpacity));
+}
+
+.normalFairy {
+    background-image:linear-gradient(to right, var(--normal), var(--normalOpacity), var(--fairy), var(--fairyOpacity));
+}
+
+.poisonGhost {
+    background-image:linear-gradient(to right, var(--poison), var(--poisonOpacity), var(--ghost), var(--ghostOpacity));
+    color: #fff;
+}
+
+.poisonGround {
+    background-image:linear-gradient(to right, var(--poison), var(--poisonOpacity), var(--ground), var(--groundOpacity));
+    color: #fff;
+}
+
+.poisonWater {
+    background-image:linear-gradient(to right, var(--poison), var(--poisonOpacity), var(--water), var(--waterOpacity));
+    color: #fff;
+}
+
+.psychicFairy {
+    background-image:linear-gradient(to right, var(--psychic), var(--psychicOpacity), var(--fairy), var(--fairyOpacity));
+}
+
+.psychicGrass {
+    background-image:linear-gradient(to right, var(--psychic), var(--psychicOpacity), var(--grass), var(--grassOpacity));
+    color: #fff;
+}
+
+.psychicIce {
+    background-image:linear-gradient(to right, var(--psychic), var(--psychicOpacity), var(--ice), var(--iceOpacity));
+}
+
+.psychicWater {
+    background-image:linear-gradient(to right, var(--psychic), var(--psychicOpacity), var(--water), var(--waterOpacity));
+    color: #fff
+}
+
+.rockWater {
+    background-image:linear-gradient(to right, var(--rock), var(--rockOpacity), var(--water), var(--waterOpacity));
     color: #fff;
 }
 
