@@ -5,16 +5,7 @@ let pokemonRepository= (function() {
 
     // push pokemon data to 'pokemonList'
     function add(pokemon) {
-        /* if(
-            typeof pokemon=== 'object' &
-            typeof pokemon.name=== 'string' &
-            typeof pokemon.height=== 'number' &
-            Array.isArray(pokemon.types)
-        ) { */
-            pokemonList.push(pokemon)
-        /* } else {
-            console.log(`Not valid!`)
-        } */
+        pokemonList.push(pokemon)
     }
 
     function getAll() {
@@ -33,7 +24,7 @@ let pokemonRepository= (function() {
         pokemonListFolder.appendChild(createListItem);
         pokemonListFolder.lastElementChild.appendChild(button);
         let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
-        buttonSelect.classList.add(pokemon.typeClass);
+        // buttonSelect.classList.add();
 
         // Create an event listener to every button -> Pokémon information
         buttonSelect.addEventListener('click', function () {
@@ -42,6 +33,7 @@ let pokemonRepository= (function() {
     }
 
     function showDetails(pokemon) {
+        let pokemonTypes= pokemon.types;
         //console.log('Name: '+ pokemon.name+ ', '+ 'Height: '+ pokemon.height+ 'cm, '+ 'Types: '+ pokemon.types+ '.');
         loadDetails(pokemon).then(function() {
             console.log(pokemon);
@@ -66,15 +58,15 @@ let pokemonRepository= (function() {
         })
     }
 
-    function loadDetails(item) {
-        let url= item.detailsUrl;
+    function loadDetails(pokemon) {
+        let url= pokemon.detailsUrl;
         return fetch(url).then(function (response) {
             return response.json();
         }).then(function(details) {
             //add the details to the item
-            item.imageUrl= details.sprites.front_default;
-            item.height= details.height;
-            item.types= details.types;
+            pokemon.imageUrl= details.sprites.front_default;
+            pokemon.height= details.height;
+            pokemon.types= details.types;
         }).catch(function (e) {
             console.error(e);
         })
@@ -90,12 +82,6 @@ let pokemonRepository= (function() {
     }
 })();
 
-// Add pokemons to pokemonList
-
-/* pokemonRepository.add({name: 'Bulbasaur', height: 70, types: [' grass', ' poison'], typeClass: 'pokemontype__grassPoison'});
-pokemonRepository.add({name: 'Charmander', height: 60, types: ['fire'], typeClass: 'pokemontype__fire'});
-pokemonRepository.add({name: 'Squirtle', height: 50, types: ['water'], typeClass: 'pokemontype__water'}); */
-
 // Loop to create a button with each pokémon the 'pokemonList' contains
 
 pokemonRepository.loadList().then(function() {
@@ -104,3 +90,5 @@ pokemonRepository.loadList().then(function() {
         pokemonRepository.addListItem(pokemon);
     });
 });
+
+console.log(document.querySelector('ul'))
