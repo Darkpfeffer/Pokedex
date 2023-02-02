@@ -106,9 +106,11 @@ let pokemonRepository= (function() {
         });
     }
 
+
+
     function showDetails(pokemon) {
-        loadDetails(pokemon).then(function() {
-            console.log('Name: '+ pokemon.name+ ' Height: '+ pokemon.height+ ' imgUrl: '+ pokemon.imageUrl);
+        loadDetails(pokemon).then(function(){
+        modalIIFE.showModal(pokemon);
         });
     }
 
@@ -168,6 +170,18 @@ let pokemonRepository= (function() {
     }
 })();
 
+let modalIIFE= (function (){
+    function showModal(pokemon) {
+        let pokemonList= document.querySelector('.pokemon-list');
+        let buttonSelect= pokemonList.querySelector('button')
+        console.log(pokemon.name)
+    }
+
+    return {
+        showModal: showModal
+    }
+})();
+
 // Loop to create a button with each pokémon the 'pokemonList' contains
 
 pokemonRepository.loadList().then(function() {
@@ -176,5 +190,3 @@ pokemonRepository.loadList().then(function() {
         pokemonRepository.addListItem(pokemon);
     });
 });
-
-console.log(document.querySelector('ul'))

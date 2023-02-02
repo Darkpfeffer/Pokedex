@@ -66,6 +66,12 @@ ul {
     list-style-type: none;
 }
 
+/* style modal window */
+
+.modal {
+    display: none;
+}
+
 /* Make pokemon types button background be the color of the types */
 
 .bug {
