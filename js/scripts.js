@@ -24,8 +24,8 @@ let pokemonRepository= (function() {
         pokemonListFolder.appendChild(createListItem);
         pokemonListFolder.lastElementChild.appendChild(button);
         let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
-        // buttonSelect.classList.add();
 
+        // Add classes for CSS purposes
         loadTypes(pokemon).then(function() {
             let pokemonTypes= pokemon.types
             pokemonTypes.forEach(function(item) {
@@ -109,7 +109,7 @@ let pokemonRepository= (function() {
     }
 
 
-
+    //shows details of the selected pokemon as a modal
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function(){
             modalIIFE.showModal(pokemon);
@@ -135,6 +135,7 @@ let pokemonRepository= (function() {
         
     }
 
+    // load pokemon data details on selected pokemon
     function loadDetails(pokemon) {
         let url= pokemon.detailsUrl;
         return fetch(url).then(function (response) {
@@ -148,7 +149,7 @@ let pokemonRepository= (function() {
             console.error(e);
         })
     }
-
+    // load pokemon types for CSS purposes
     function loadTypes(pokemon) {
         let url= pokemon.detailsUrl;
         return fetch(url).then(function (response) {
@@ -171,7 +172,7 @@ let pokemonRepository= (function() {
         loadTypes: loadTypes
     }
 })();
-
+// modal repository IIFE
 let modalIIFE= (function (){
     function showModal(pokemon) {
         // Create element shortcuts
@@ -186,13 +187,20 @@ let modalIIFE= (function (){
         let modalContainer= document.querySelector('.modal-container');
         let classRemove= modalContainer.classList.remove('modal-container');
 
+        // statements to create visible information if it haven't be done before
         if (!modalContainer.lastElementChild.classList.contains('modal')) {
+            // create a div for modal
             modalContainer.appendChild(divCreate);
             modalContainer.lastElementChild.classList.add('modal');
             let modal= modalContainer.querySelector('.modal');
+
+            // create a second div for CSS purposes
             modal.appendChild(divCreate2);
             modal.lastElementChild.classList.add('modal-child')
             let modalChild= modal.querySelector('.modal-child')
+
+            /* create a close button, a heading with the pokemon name, paragraph for pokemon height,
+            and an image of the pokemon. */
             modalChild.appendChild(closeButtonElement);
             modalChild.lastElementChild.classList.add('modal-close');
             modalChild.lastElementChild.innerText='Close';
@@ -204,18 +212,26 @@ let modalIIFE= (function (){
             modalChild.appendChild(paragraphCreate);
             imageCreate.src= pokemon.imageUrl;
             modalChild.appendChild(imageCreate);
+
+            // add a class to the div to be the details visible for the user
             modal.classList.add('is-visible');
             let activeModal= document.querySelector('.is-visible');
+
+            // add an event listener to close the modal when the user clicks outside of the modal
             activeModal.addEventListener('click', (e) => {
                 let target= e.target;
                 if(target=== activeModal) {
                     hideModal();
                 }; 
             })
+
+            // removes '.modal-container' from the selected div -> classes can be used to navigate on the site
             classRemove;
         } else {
+            // if the modal have been already opened once, just adds the '.is-visible' class to the first div
             let modal=modalContainer.querySelector('.modal');
             modal.classList.add('is-visible');
+            // removes '.modal-container' from the selected div
             classRemove;
         }
     }
@@ -240,6 +256,7 @@ pokemonRepository.loadList().then(function() {
     });
 });
 
+// add an event listener for hide the modal if 'Escape' button have been pressed
 window.addEventListener('keydown', (e) => {
     if (e.key=== 'Escape'&& document.querySelector('.is-visible')) {
         modalIIFE.hideModal();
