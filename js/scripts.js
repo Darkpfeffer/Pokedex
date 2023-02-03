@@ -102,6 +102,8 @@ let pokemonRepository= (function() {
 
         // Create an event listener to every button -> Pokémon information
         buttonSelect.addEventListener('click', function () {
+            if (buttonSelect)
+            buttonSelect.parentElement.classList.add('modal-container')
             showDetails(pokemon);
         });
     }
@@ -110,7 +112,7 @@ let pokemonRepository= (function() {
 
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function(){
-        modalIIFE.showModal(pokemon);
+            modalIIFE.showModal(pokemon);
         });
     }
 
@@ -172,9 +174,31 @@ let pokemonRepository= (function() {
 
 let modalIIFE= (function (){
     function showModal(pokemon) {
-        let pokemonList= document.querySelector('.pokemon-list');
-        let buttonSelect= pokemonList.querySelector('button')
-        console.log(pokemon.name)
+        // Create element shortcuts
+        let divCreate= document.createElement('div');
+        let headingCreate= document.createElement('h1');
+        let imageCreate= document.createElement('img');
+        let paragraphCreate= document.createElement('p')
+
+        // modal function shortcuts
+        let modalContainer= document.querySelector('.modal-container');
+        let classRemove= modalContainer.classList.remove('modal-container');
+
+        if (!modalContainer.lastElementChild.classList.contains('modal')) {
+            modalContainer.appendChild(divCreate);
+            modalContainer.lastElementChild.classList.add('modal');
+            let modalChild= modalContainer.querySelector('.modal');
+            modalContainer.lastElementChild.appendChild(headingCreate);
+            modalChild.lastElementChild.innerText= pokemon.name;
+            modalChild.appendChild(paragraphCreate);
+            modalChild.lastElementChild.innerText= 'Height: '+ pokemon.height;
+            modalChild.appendChild(paragraphCreate);
+            imageCreate.src= pokemon.imageUrl;
+            modalChild.appendChild(imageCreate);
+            classRemove;
+        } else {
+            classRemove;
+        }
     }
 
     return {
