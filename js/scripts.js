@@ -181,8 +181,6 @@ let modalIIFE= (function (){
         let imageCreate= document.createElement('img');
         let paragraphCreate= document.createElement('p');
         let closeButtonElement= document.createElement('button')
-        closeButtonElement.classList.add('modal-close');
-        closeButtonElement.innerText='Close';
 
         // modal function shortcuts
         let modalContainer= document.querySelector('.modal-container');
@@ -196,6 +194,8 @@ let modalIIFE= (function (){
             modal.lastElementChild.classList.add('modal-child')
             let modalChild= modal.querySelector('.modal-child')
             modalChild.appendChild(closeButtonElement);
+            modalChild.lastElementChild.classList.add('modal-close');
+            modalChild.lastElementChild.innerText='Close';
             modalChild.appendChild(headingCreate);
             modalChild.lastElementChild.innerText= pokemon.name;
             modalChild.appendChild(paragraphCreate);
@@ -206,6 +206,7 @@ let modalIIFE= (function (){
             modal.classList.add('is-visible');
             classRemove;
         } else {
+            modal.classList.add('is-visible');
             classRemove;
         }
     }
