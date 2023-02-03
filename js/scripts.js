@@ -196,6 +196,7 @@ let modalIIFE= (function (){
             modalChild.appendChild(closeButtonElement);
             modalChild.lastElementChild.classList.add('modal-close');
             modalChild.lastElementChild.innerText='Close';
+            modalChild.lastElementChild.addEventListener('click', hideModal);
             modalChild.appendChild(headingCreate);
             modalChild.lastElementChild.innerText= pokemon.name;
             modalChild.appendChild(paragraphCreate);
@@ -206,13 +207,20 @@ let modalIIFE= (function (){
             modal.classList.add('is-visible');
             classRemove;
         } else {
+            let modal=modalContainer.querySelector('.modal');
             modal.classList.add('is-visible');
             classRemove;
         }
     }
 
+    function hideModal() {
+        let activeModal= document.querySelector('.is-visible')
+        activeModal.classList.remove('is-visible');
+    }
+
     return {
-        showModal: showModal
+        showModal: showModal,
+        hideModal: hideModal
     }
 })();
 
