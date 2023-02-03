@@ -205,6 +205,13 @@ let modalIIFE= (function (){
             imageCreate.src= pokemon.imageUrl;
             modalChild.appendChild(imageCreate);
             modal.classList.add('is-visible');
+            let activeModal= document.querySelector('.is-visible');
+            activeModal.addEventListener('click', (e) => {
+                let target= e.target;
+                if(target=== activeModal) {
+                    hideModal();
+                }; 
+            })
             classRemove;
         } else {
             let modal=modalContainer.querySelector('.modal');
@@ -232,3 +239,9 @@ pokemonRepository.loadList().then(function() {
         pokemonRepository.addListItem(pokemon);
     });
 });
+
+window.addEventListener('keydown', (e) => {
+    if (e.key=== 'Escape'&& document.querySelector('.is-visible')) {
+        modalIIFE.hideModal();
+    }
+})
