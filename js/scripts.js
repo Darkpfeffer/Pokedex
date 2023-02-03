@@ -176,9 +176,13 @@ let modalIIFE= (function (){
     function showModal(pokemon) {
         // Create element shortcuts
         let divCreate= document.createElement('div');
+        let divCreate2= document.createElement('div');
         let headingCreate= document.createElement('h1');
         let imageCreate= document.createElement('img');
-        let paragraphCreate= document.createElement('p')
+        let paragraphCreate= document.createElement('p');
+        let closeButtonElement= document.createElement('button')
+        closeButtonElement.classList.add('modal-close');
+        closeButtonElement.innerText='Close';
 
         // modal function shortcuts
         let modalContainer= document.querySelector('.modal-container');
@@ -187,14 +191,19 @@ let modalIIFE= (function (){
         if (!modalContainer.lastElementChild.classList.contains('modal')) {
             modalContainer.appendChild(divCreate);
             modalContainer.lastElementChild.classList.add('modal');
-            let modalChild= modalContainer.querySelector('.modal');
-            modalContainer.lastElementChild.appendChild(headingCreate);
+            let modal= modalContainer.querySelector('.modal');
+            modal.appendChild(divCreate2);
+            modal.lastElementChild.classList.add('modal-child')
+            let modalChild= modal.querySelector('.modal-child')
+            modalChild.appendChild(closeButtonElement);
+            modalChild.appendChild(headingCreate);
             modalChild.lastElementChild.innerText= pokemon.name;
             modalChild.appendChild(paragraphCreate);
             modalChild.lastElementChild.innerText= 'Height: '+ pokemon.height;
             modalChild.appendChild(paragraphCreate);
             imageCreate.src= pokemon.imageUrl;
             modalChild.appendChild(imageCreate);
+            modal.classList.add('is-visible');
             classRemove;
         } else {
             classRemove;

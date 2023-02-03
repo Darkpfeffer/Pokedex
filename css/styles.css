@@ -66,16 +66,6 @@ ul {
     list-style-type: none;
 }
 
-/* style modal window */
-
-.modal {
-    display: none;
-}
-
-/* .modal.is-visible {
-
-} */
-
 /* Make pokemon types button background be the color of the types */
 
 .bug {
@@ -202,6 +192,41 @@ ul {
 .rockWater {
     background-image:linear-gradient(to right, var(--rock), var(--rockOpacity), var(--water), var(--waterOpacity));
     color: #fff;
+}
+
+/* style modal window */
+
+.modal {
+    display: none;
+}
+
+.modal.is-visible {
+    position: fixed;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    /* margin: 15%; */
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+    /*show it above other content */
+    z-index: 999;
+
+    /*allow scrolling */
+    overflow: auto;
+
+    /*center the modal */
+    display: grid;
+    text-align: center;
+}
+
+.modal-child {
+    margin: auto;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 15px;
+    width: 100%;
 }
 
 @media all and (max-width:750px) {
