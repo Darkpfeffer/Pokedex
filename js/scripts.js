@@ -205,13 +205,13 @@ let modalIIFE= (function (){
             modalChild.lastElementChild.classList.add('modal-close');
             modalChild.lastElementChild.innerText='Close';
             modalChild.lastElementChild.addEventListener('click', hideModal);
+            imageCreate.src= pokemon.imageUrl;
+            modalChild.appendChild(imageCreate);
             modalChild.appendChild(headingCreate);
-            modalChild.lastElementChild.innerText= pokemon.name;
+            modalChild.lastElementChild.innerText= 'Name: '+ pokemon.name;
             modalChild.appendChild(paragraphCreate);
             modalChild.lastElementChild.innerText= 'Height: '+ pokemon.height;
             modalChild.appendChild(paragraphCreate);
-            imageCreate.src= pokemon.imageUrl;
-            modalChild.appendChild(imageCreate);
 
             // add a class to the div to be the details visible for the user
             modal.classList.add('is-visible');

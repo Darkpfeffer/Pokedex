@@ -35,18 +35,22 @@
 }
 
 body {
-    font-size: 2vh;
+    font-size: 25px;
     margin-left: 1%; 
+}
+
+h1 {
+    font-size: 50px;
 }
 
 button {
     display: block;
-    font-size: 25px;
+    font-size: 30px;
     width: 85%;
     max-width: 500px;
     height: 15vh;
-    margin-left: 7.5%;
-    margin-right: 7.5%;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 10px;
     border-radius: 8px;
     border: none;
@@ -65,9 +69,69 @@ button:active {
     border: none;
 }
 
-
 ul {
     list-style-type: none;
+}
+
+/* style modal window */
+
+.modal {
+    display: none;
+}
+
+.modal.is-visible {
+    position: fixed;
+    padding: 0px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+    /*show it above other content */
+    z-index: 999;
+
+    /*allow scrolling */
+    overflow: auto;
+
+    /*center the modal */
+    display: grid;
+    text-align: center;
+}
+
+.modal-child {
+    margin: auto;
+    box-sizing: border-box;
+    background-image: linear-gradient(to right, rgba(233, 209, 53, 1), rgba(250, 250, 250, 1));
+    padding: 15px;
+    width: 100%;
+}
+
+.modal-close {
+    display: block;
+    float: right;
+    left: 0px;
+    background-color: inherit;
+    font-size:14px;
+    text-decoration: underline;
+    width: auto;
+    height: auto;
+    margin: 0px;
+    border: none;
+}
+
+.modal-close:hover, .modal-close:focus {
+    border: none;
+    color: #737373;
+}
+
+.modal-close:active {
+    color: #000;
+}
+
+img {
+    float: left;
+    width: 250px;
 }
 
 /* Make pokemon types button background be the color of the types */
@@ -198,50 +262,40 @@ ul {
     color: #fff;
 }
 
-/* style modal window */
+@media all and (max-width: 650px) {
+    h1 {
+        font-size: 30px;
+    }
 
-.modal {
-    display: none;
-}
-
-.modal.is-visible {
-    position: fixed;
-    padding: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-
-    /*show it above other content */
-    z-index: 999;
-
-    /*allow scrolling */
-    overflow: auto;
-
-    /*center the modal */
-    display: grid;
-    text-align: center;
-}
-
-.modal-child {
-    margin: auto;
-    box-sizing: border-box;
-    background: #fff;
-    padding: 15px;
-    width: 100%;
-}
-
-@media all and (max-width:400px) {
-    button {
-        font-size: 1.5vh;
-        height: 12.5vh;
+    p {
+        font-size: 16px;
     }
 }
 
-@media all and (max-width:250px) {
+@media all and (max-width: 504px) {
+    img {
+        width: 150px;
+    }
+}
+
+@media all and (max-width: 402px) {
+    h1 {
+        font-size: 20px;
+    }
+    
     button {
-        font-size: 1.25vh;
+        font-size: 3vh;
+        height: 12.5vh;
+    }
+
+    img {
+        width: 125px;
+    }
+}
+
+@media all and (max-width: 249px) {
+    button {
+        font-size: 2.5vh;
         height: 10vh;
     }
 }
