@@ -262,7 +262,7 @@ img {
     color: #fff;
 }
 
-@media all and (max-width: 650px) {
+@media all and (max-width: 670px) {
     h1 {
         font-size: 30px;
     }
@@ -272,13 +272,13 @@ img {
     }
 }
 
-@media all and (max-width: 504px) {
+@media all and (max-width: 525px) {
     img {
         width: 150px;
     }
 }
 
-@media all and (max-width: 402px) {
+@media all and (max-width: 420px) {
     h1 {
         font-size: 20px;
     }
@@ -288,14 +288,30 @@ img {
         height: 12.5vh;
     }
 
+    .modal-close {
+        font-size: 10px;
+    }
+
     img {
         width: 125px;
     }
 }
 
-@media all and (max-width: 249px) {
+@media all and (max-width: 260px) {
     button {
-        font-size: 2.5vh;
+        font-size: 2vh;
         height: 10vh;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    img {
+        width: 100px;
     }
 }
