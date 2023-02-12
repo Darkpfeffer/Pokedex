@@ -1,3 +1,5 @@
+/* Variables */
+
 :root {
     --bug: rgba(166, 185, 26, 1);
     --bugOpacity: rgba(57, 61, 26, 1);
@@ -34,6 +36,7 @@
     
 }
 
+/* Default stylings */
 body {
     font-size: 25px;
     margin-left: 1%; 
@@ -261,6 +264,8 @@ img {
     background-image:linear-gradient(to right, var(--rock), var(--rockOpacity), var(--water), var(--waterOpacity));
     color: #fff;
 }
+
+/* Media queries for accessibility purposes */
 
 @media all and (max-width: 670px) {
     h1 {
