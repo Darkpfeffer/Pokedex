@@ -76,6 +76,14 @@ ul {
     list-style-type: none;
 }
 
+.navbar {
+    margin: 0px;
+}
+
+.navbar-icon {
+    width: 50px;
+}
+
 /* style modal window */
 
 .modal {
@@ -288,7 +296,7 @@ img {
         font-size: 20px;
     }
     
-    button {
+    .btn-primary {
         font-size: 3vh;
         height: 12.5vh;
     }
@@ -303,7 +311,7 @@ img {
 }
 
 @media all and (max-width: 260px) {
-    button {
+    .btn-primary {
         font-size: 2vh;
         height: 10vh;
     }
@@ -318,5 +326,9 @@ img {
 
     img {
         width: 100px;
+    }
+
+    .navbar-icon {
+        width: 35px;
     }
 }
