@@ -166,7 +166,10 @@ let pokemonRepository= (function() {
     }
 
     function searchPokemon() {
-
+        let input= document.querySelector('.search-input');
+        if (input.value === '') {
+            
+        }
     }
 
     return {
@@ -295,8 +298,13 @@ let searchButton= document.querySelector('.submit-button')
 
 searchButton.addEventListener('click', (e) => {
     e.preventDefault();
+    pokemonRepository.searchPokemon();
 })
 
 searchButton.addEventListener('keydown', (e) => {
-    e.preventDefault();
+    let input= document.querySelector('.search-input');
+    if (input.key=== 'Enter') {
+        e.preventDefault();
+        pokemonRepository.searchPokemon();
+    }
 })
