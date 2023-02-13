@@ -178,6 +178,7 @@ let modalIIFE= (function (){
         // Create element shortcuts
         let divCreate= document.createElement('div');
         let divCreate2= document.createElement('div');
+        let divCreate3= document.createElement('div');
         let headingCreate= document.createElement('h1');
         let imageCreate= document.createElement('img');
         let paragraphCreate= document.createElement('p');
@@ -193,22 +194,36 @@ let modalIIFE= (function (){
             modalContainer.appendChild(divCreate);
             modalContainer.lastElementChild.classList.add('modal');
             let modal= modalContainer.querySelector('.modal');
+            modal.setAttribute('tabindex', "-1");
+            modal.setAttribute('role', "dialog");
 
-            // create a second div for CSS purposes
+            // create second div for Bootstrap modal
             modal.appendChild(divCreate2);
-            modal.lastElementChild.classList.add('modal-child')
-            let modalChild= modal.querySelector('.modal-child')
+            modal.lastElementChild.classList.add('modal-dialog');
+            let modalSecond= modal.querySelector('.modal-dialog');
+            modalSecond.classList.add('modal-lg')
+            modalSecond.setAttribute('role', "document");
+
+            // create a third div for CSS purposes
+            modalSecond.appendChild(divCreate3);
+            modalSecond.lastElementChild.classList.add('modal-child');
+            modalSecond.lastElementChild.classList.add('modal-content');
+            let modalChild= modalSecond.querySelector('.modal-child');
 
             /* create a close button, a heading with the pokemon name, paragraph for pokemon height,
             and an image of the pokemon. */
             modalChild.appendChild(closeButtonElement);
-            modalChild.lastElementChild.classList.add('modal-close');
+            modalChild.lastElementChild.setAttribute('type', "button")
+            modalChild.lastElementChild.classList.add('close');
+            modalChild.lastElementChild.setAttribute('data-dismiss', "modal");
+            modalChild.lastElementChild.setAttribute('aria-label', "Close");
             modalChild.lastElementChild.innerText='Close';
             modalChild.lastElementChild.addEventListener('click', hideModal);
+            modalChild.appendChild(headingCreate);
+            headingCreate.classList.add('modal-header');
+            modalChild.lastElementChild.innerText= 'Name: '+ pokemon.name;
             imageCreate.src= pokemon.imageUrl;
             modalChild.appendChild(imageCreate);
-            modalChild.appendChild(headingCreate);
-            modalChild.lastElementChild.innerText= 'Name: '+ pokemon.name;
             modalChild.appendChild(paragraphCreate);
             modalChild.lastElementChild.innerText= 'Height: '+ pokemon.height;
             modalChild.appendChild(paragraphCreate);
