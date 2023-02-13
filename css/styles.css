@@ -46,7 +46,7 @@ h1 {
     font-size: 50px;
 }
 
-button {
+.btn-primary {
     display: block;
     font-size: 30px;
     width: 85%;
