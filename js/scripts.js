@@ -22,8 +22,11 @@ let pokemonRepository= (function() {
         button.innerText= pokemon.name;
         document.querySelector('.pokemon-list');
         pokemonListFolder.appendChild(createListItem);
+        createListItem.classList.add('group-list-item')
         pokemonListFolder.lastElementChild.appendChild(button);
         let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
+        buttonSelect.classList.add('btn');
+        buttonSelect.classList.add('btn-primary');
 
         // Add classes for CSS purposes
         loadTypes(pokemon).then(function() {
@@ -214,19 +217,23 @@ let modalIIFE= (function (){
             and an image of the pokemon. */
             modalChild.appendChild(closeButtonElement);
             modalChild.lastElementChild.setAttribute('type', "button")
+            modalChild.lastElementChild.classList.add('modal-close')
             modalChild.lastElementChild.classList.add('close');
             modalChild.lastElementChild.setAttribute('data-dismiss', "modal");
             modalChild.lastElementChild.setAttribute('aria-label', "Close");
+            modalChild.lastElementChild.innerHTML='<span aria-hidden="true">&times;</span>';
             modalChild.lastElementChild.innerText='Close';
             modalChild.lastElementChild.addEventListener('click', hideModal);
             modalChild.appendChild(headingCreate);
             headingCreate.classList.add('modal-header');
             modalChild.lastElementChild.innerText= 'Name: '+ pokemon.name;
+            modalChild.appendChild(paragraphCreate);
+            paragraphCreate.classList.add('modal-content')
+            modalChild.lastElementChild.innerText= 'Height: '+ pokemon.height;
             imageCreate.src= pokemon.imageUrl;
             modalChild.appendChild(imageCreate);
-            modalChild.appendChild(paragraphCreate);
-            modalChild.lastElementChild.innerText= 'Height: '+ pokemon.height;
-            modalChild.appendChild(paragraphCreate);
+            imageCreate.classList.add()
+
 
             // add a class to the div to be the details visible for the user
             modal.classList.add('is-visible');
