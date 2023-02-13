@@ -165,6 +165,10 @@ let pokemonRepository= (function() {
         })
     }
 
+    function searchPokemon() {
+
+    }
+
     return {
         add: add,
         getAll: getAll,
@@ -172,8 +176,10 @@ let pokemonRepository= (function() {
         showDetails: showDetails,
         loadList: loadList,
         loadDetails: loadDetails,
-        loadTypes: loadTypes
+        loadTypes: loadTypes,
+        searchPokemon: searchPokemon
     }
+
 })();
 // modal repository IIFE
 let modalIIFE= (function (){
@@ -285,3 +291,12 @@ window.addEventListener('keydown', (e) => {
     }
 })
 
+let searchButton= document.querySelector('.submit-button')
+
+searchButton.addEventListener('click', (e) => {
+    e.preventDefault();
+})
+
+searchButton.addEventListener('keydown', (e) => {
+    e.preventDefault();
+})
