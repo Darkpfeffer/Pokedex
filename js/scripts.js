@@ -106,7 +106,6 @@ let pokemonRepository= (function() {
 
         // Create an event listener to every button -> Pokémon information
         buttonSelect.addEventListener('click', function () {
-            if (buttonSelect)
             buttonSelect.parentElement.classList.add('modal-container')
             showDetails(pokemon);
         });
@@ -166,7 +165,30 @@ let pokemonRepository= (function() {
         })
     }
 
-    function searchPokemon() {       
+    function searchPokemon() {
+        let input= document.querySelector('.search-input');
+        let pokemonList2= document.querySelector('.pokemon-list')
+        let pokemonElements= pokemonList2.getElementsByTagName('li')
+
+        for (let i=0; i< pokemonElements.length; i++) {
+            if(input.value=== ''){
+                pokemonElements[i].firstElementChild.classList.remove('hide')
+            } else if (pokemonElements[i].firstElementChild.innerText.indexOf(input.value)) {
+                pokemonElements[i].firstElementChild.classList.add('hide')
+            }
+        }
+
+        //pokemonList2.forEach(li => console.log(li));
+
+        /*if (input.value=== '') {
+            pokemonList.forEach(li => console.log(li)
+                
+                // .classList.remove('hide')
+            )
+        } else if (input.value.includes('as')) {
+            console.log('congrats');
+        }*/
+        
     };
 
     return {
