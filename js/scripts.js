@@ -232,7 +232,7 @@ let modalIIFE= (function (){
             modal.appendChild(divCreate2);
             modal.lastElementChild.classList.add('modal-dialog');
             let modalSecond= modal.querySelector('.modal-dialog');
-            modalSecond.classList.add('modal-lg')
+            modalSecond.classList.add('modal-custom')
             modalSecond.setAttribute('role', "document");
 
             // create a third div for CSS purposes

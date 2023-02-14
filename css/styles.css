@@ -61,13 +61,13 @@ h1 {
     border-bottom: 1vh solid rgba(0, 0, 0, 0.8);
 }
 
-button:hover, button:focus {
+.btn-primary:hover, .btn-primary:focus {
     border-right: 0.25vh solid rgba(0, 0, 0, 0.8);
     border-bottom: 0.5vh solid rgba(0, 0, 0, 0.8);
     transition-duration: 0.5s;
 }
 
-button:active {
+.btn-primary:active {
     transition-duration: 0.3s;
     border: none;
 }
@@ -91,10 +91,6 @@ ul {
 }
 
 /* style modal window */
-
-.modal {
-    display: none;
-}
 
 .modal.is-visible {
     position: fixed;
@@ -334,7 +330,20 @@ img {
         width: 100px;
     }
 
+    .navbar-brand {
+        font-size: 12px;
+    }
+
     .navbar-icon {
+        display: none
+    }
+
+    .navbar-toggler {
         width: 35px;
+        margin: 0px;
+    }
+
+    .navbar-toggler-icon {
+        width: 20px;
     }
 }
