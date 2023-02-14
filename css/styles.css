@@ -84,6 +84,12 @@ ul {
     width: 50px;
 }
 
+/* search engine */
+
+.hide {
+    display: none;
+}
+
 /* style modal window */
 
 .modal {

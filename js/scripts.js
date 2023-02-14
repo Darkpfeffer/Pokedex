@@ -27,6 +27,7 @@ let pokemonRepository= (function() {
         let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
         buttonSelect.classList.add('btn');
         buttonSelect.classList.add('btn-primary');
+        buttonSelect.classList.add('pokemon-button');
 
         // Add classes for CSS purposes
         loadTypes(pokemon).then(function() {
@@ -165,12 +166,8 @@ let pokemonRepository= (function() {
         })
     }
 
-    function searchPokemon() {
-        let input= document.querySelector('.search-input');
-        if (input.value === '') {
-            
-        }
-    }
+    function searchPokemon() {       
+    };
 
     return {
         add: add,
@@ -284,6 +281,7 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.getAll().forEach(function(pokemon) {
     
         pokemonRepository.addListItem(pokemon);
+
     });
 });
 
