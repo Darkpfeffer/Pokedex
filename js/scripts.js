@@ -28,6 +28,9 @@ let pokemonRepository= (function() {
         buttonSelect.classList.add('btn');
         buttonSelect.classList.add('btn-primary');
         buttonSelect.classList.add('pokemon-button');
+        buttonSelect.parentElement.classList.add('col-xl-3');
+        buttonSelect.parentElement.classList.add('col-lg-4');
+        buttonSelect.parentElement.classList.add('col-md-6');
 
         // Add classes for CSS purposes
         loadTypes(pokemon).then(function() {
