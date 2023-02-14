@@ -179,19 +179,7 @@ let pokemonRepository= (function() {
             } else if (pokemonElements[i].firstElementChild.innerText.indexOf(input.value)) {
                 pokemonElements[i].firstElementChild.classList.add('hide')
             }
-        }
-
-        //pokemonList2.forEach(li => console.log(li));
-
-        /*if (input.value=== '') {
-            pokemonList.forEach(li => console.log(li)
-                
-                // .classList.remove('hide')
-            )
-        } else if (input.value.includes('as')) {
-            console.log('congrats');
-        }*/
-        
+        }        
     };
 
     return {
