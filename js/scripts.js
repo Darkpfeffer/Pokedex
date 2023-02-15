@@ -22,7 +22,7 @@ let pokemonRepository= (function() {
         button.innerText= pokemon.name;
         document.querySelector('.pokemon-list');
         pokemonListFolder.appendChild(createListItem);
-        createListItem.classList.add('group-list-item')
+        createListItem.classList.add('list-group-item')
         pokemonListFolder.lastElementChild.appendChild(button);
         let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
         buttonSelect.classList.add('btn-block');
