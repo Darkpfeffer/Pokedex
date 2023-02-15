@@ -183,7 +183,7 @@ let pokemonRepository= (function() {
             if(input.value=== ''){
             // if the input field contains a part of the pokemon name, every other button should get the hide class
             } else if (pokemonElements[i].firstElementChild.innerText.indexOf(input.value)) {
-                pokemonElements[i].firstElementChild.classList.add('hide')
+                pokemonElements[i].classList.add('hide')
             }
         }        
     };
@@ -247,7 +247,7 @@ let modalIIFE= (function (){
             modalChild.lastElementChild.innerText='Close';
             modalChild.lastElementChild.addEventListener('click', hideModal);
             modalChild.appendChild(headingCreate);
-            headingCreate.classList.add('modal-header');
+            headingCreate.classList.add('modal-title');
             modalChild.lastElementChild.innerText= 'Name: '+ pokemon.name;
             modalChild.appendChild(paragraphCreate);
             paragraphCreate.classList.add('modal-content')

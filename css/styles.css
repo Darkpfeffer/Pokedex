@@ -1,6 +1,6 @@
 /* Variables */
 
-/* :root {
+:root {
     --bug: rgba(166, 185, 26, 1);
     --bugOpacity: rgba(57, 61, 26, 1);
     --dragon: rgba(111, 53, 252, 1);
@@ -34,53 +34,42 @@
     --water: rgba(14, 126, 154, 1);
     --waterOpacity: rgba(11, 83, 102, 1);
     
-} */
+}
 
 /* Default stylings */
 
-/*body {
+body {
     background-image: linear-gradient(to right, rgba(233, 209, 53, 1), rgba(250, 250, 250, 1));
 }
 
 .btn-primary {
-    display: block;
-    font-size: 30px;
-    width: 85%;
-    max-width: 500px;
-    height: 15vh;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    height: 10vh;
+    font-size: 20px;
     border-radius: 8px;
     border: none;
-    border-right: 0.5vh solid rgba(0, 0, 0, 0.8);
-    border-bottom: 1vh solid rgba(0, 0, 0, 0.8);
+    border-right: 0.25vh solid rgba(0, 0, 0, 0.8);
+    border-bottom: 0.5vh solid rgba(0, 0, 0, 0.8);
 }
 
 .btn-primary:hover, .btn-primary:focus {
-    border-right: 0.25vh solid rgba(0, 0, 0, 0.8);
-    border-bottom: 0.5vh solid rgba(0, 0, 0, 0.8);
-    transition-duration: 0.5s;
+    transition-duration: 0.3s;
 }
 
 .btn-primary:active {
     border: none;
 }
 
-ul {
-    list-style-type: none;
-}  */
-
 /* Navbar styling */ 
 
-/* .navbar {
+.navbar {
     margin: 0px;
-    border-bottom:rgba(0, 0, 0, 1)
+    padding: 2px;
+    border-bottom: 2px solid rgba(0, 0, 0, 1);
 }
 
 .navbar-icon {
     width: 50px;
-} */
+}
 
 
 
@@ -92,60 +81,18 @@ ul {
 
 /* style modal window */
 
-/* .modal.is-visible {
-    position: fixed;
-    padding: 0px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); */
-
-    /*show it above other content */
-    /* z-index: 999; */
-
-    /*allow scrolling */
-    /* overflow: auto; */
-
-    /*center the modal */
-    /*display: grid;
-    text-align: center;
-} */
-
-/* .modal-child {
-    margin: auto;
-    box-sizing: border-box;
+.modal-content {
     background-image: linear-gradient(to right, rgba(233, 209, 53, 1), rgba(250, 250, 250, 1));
-    padding: 15px;
-    width: 100%;
-}
-
-.modal-close {
-    display: block;
-    float: right;
-    left: 0px;
-    background-color: inherit;
-    font-size:14px;
-    text-decoration: underline;
-    width: auto;
-    height: auto;
-    margin: 0px;
-    border: none;
-}
-
-.modal-close:hover, .modal-close:focus {
-    border: none;
-    color: #737373;
-}
-
-.modal-close:active {
-    color: #000;
 }
 
 img {
-    float: left;
-    width: 250px;
-} */
+    align-self: center;
+    max-width: 250px;
+}
+
+.close{
+    text-decoration: underline;
+}
 
 /* Make pokemon types button background be the color of the types */
 
@@ -310,24 +257,24 @@ img {
     img {
         width: 125px;
     }
-}
+} */
 
 @media all and (max-width: 260px) {
     .btn-primary {
-        font-size: 2vh;
-        height: 10vh;
+        font-size: 1.5vh;
+        height: 7vh;
     }
 
     h1 {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     p {
         font-size: 12px;
     }
 
-    img {
-        width: 100px;
+    .close {
+        font-size: 14px;
     }
 
     .navbar-brand {
@@ -346,4 +293,18 @@ img {
     .navbar-toggler-icon {
         width: 20px;
     }
-} */
+
+
+}
+
+@media all and (max-width: 180px) {
+
+    h1 {
+        font-size: 10px;
+    }
+
+    .search-input {
+        max-width: 65px;
+        font-size: 10px;
+    }
+}
