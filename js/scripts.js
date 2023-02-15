@@ -173,11 +173,14 @@ let pokemonRepository= (function() {
         let input= document.querySelector('.search-input');
         let pokemonList2= document.querySelector('.pokemon-list')
         let pokemonElements= pokemonList2.getElementsByTagName('li')
+        let hiddenListItem= document.querySelectorAll('.hide')
+        for (let i=0; i< pokemonElements.length; i++) {
+            pokemonElements[i].firstElementChild.classList.remove('hide')
+        }
 
         for (let i=0; i< pokemonElements.length; i++) {
-            // if the input field is empty, the hide class should be removed from every button
+            // if the input field is empty, don't do anything except the default class remove
             if(input.value=== ''){
-                pokemonElements[i].firstElementChild.classList.remove('hide')
             // if the input field contains a part of the pokemon name, every other button should get the hide class
             } else if (pokemonElements[i].firstElementChild.innerText.indexOf(input.value)) {
                 pokemonElements[i].firstElementChild.classList.add('hide')
