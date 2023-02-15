@@ -25,9 +25,11 @@ let pokemonRepository= (function() {
         createListItem.classList.add('group-list-item')
         pokemonListFolder.lastElementChild.appendChild(button);
         let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
-        buttonSelect.classList.add('btn');
+        buttonSelect.classList.add('btn-block');
         buttonSelect.classList.add('btn-primary');
         buttonSelect.classList.add('pokemon-button');
+        buttonSelect.setAttribute('data-toggle', "modal")
+        buttonSelect.setAttribute('data-target', "#exampleModal")
         buttonSelect.parentElement.classList.add('col-xl-3');
         buttonSelect.parentElement.classList.add('col-lg-4');
         buttonSelect.parentElement.classList.add('col-md-6');
@@ -210,7 +212,6 @@ let modalIIFE= (function (){
 
         // modal function shortcuts
         let modalContainer= document.querySelector('.modal-container');
-        let classRemove= modalContainer.classList.remove('modal-container');
 
         // statements to create visible information if it haven't be done before
         if (!modalContainer.lastElementChild.classList.contains('modal')) {
@@ -220,6 +221,7 @@ let modalIIFE= (function (){
             let modal= modalContainer.querySelector('.modal');
             modal.setAttribute('tabindex', "-1");
             modal.setAttribute('role', "dialog");
+            modal.setAttribute('id', "exampleModal");
 
             // create second div for Bootstrap modal
             modal.appendChild(divCreate2);
@@ -268,20 +270,34 @@ let modalIIFE= (function (){
                 }; 
             })
 
-            // removes '.modal-container' from the selected div -> classes can be used to navigate on the site
-            classRemove;
+            // click on the button again
+            let buttonActivate= modalContainer.querySelector('.btn-block')
+            buttonActivate.click();
+
+            // removes '.modal-container' and '#exampleModal' from the selected div -> classes can be used to navigate on the site
+            
+            console.log(exampleModal);
+
         } else {
-            // if the modal have been already opened once, just adds the '.is-visible' class to the first div
-            let modal=modalContainer.querySelector('.modal');
+            let modal= modalContainer.querySelector('.modal');
+            modal.setAttribute('id', "exampleModal");
+            let buttonActivate= modalContainer.querySelector('.btn-block')
+            if (modal.classList.contains('is-visible')) {
+                // leave this empty! (prevent 'buttonActivate.click()' activation endlessly)
+            } else {
+            buttonActivate.click();
             modal.classList.add('is-visible');
-            // removes '.modal-container' from the selected div
-            classRemove;
+            }
         }
     }
 
     function hideModal() {
-        let activeModal= document.querySelector('.is-visible')
+        let modalContainer= document.querySelector('.modal-container');
+        let activeModal= document.querySelector('.is-visible');
         activeModal.classList.remove('is-visible');
+        let exampleModal= document.getElementById('exampleModal');
+        exampleModal.removeAttribute('id');
+        modalContainer.classList.remove('modal-container');
     }
 
     return {
