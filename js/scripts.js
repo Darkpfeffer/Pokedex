@@ -27,7 +27,6 @@ let pokemonRepository= (function() {
         let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
         buttonSelect.classList.add('btn-block');
         buttonSelect.classList.add('btn-primary');
-        buttonSelect.classList.add('pokemon-button');
         buttonSelect.setAttribute('data-toggle', "modal")
         buttonSelect.setAttribute('data-target', "#exampleModal")
         buttonSelect.parentElement.classList.add('col-xl-3');
@@ -227,20 +226,17 @@ let modalIIFE= (function (){
             modal.appendChild(divCreate2);
             modal.lastElementChild.classList.add('modal-dialog');
             let modalSecond= modal.querySelector('.modal-dialog');
-            modalSecond.classList.add('modal-custom')
             modalSecond.setAttribute('role', "document");
 
             // create a third div for CSS purposes
             modalSecond.appendChild(divCreate3);
-            modalSecond.lastElementChild.classList.add('modal-child');
             modalSecond.lastElementChild.classList.add('modal-content');
-            let modalChild= modalSecond.querySelector('.modal-child');
+            let modalChild= modalSecond.querySelector('.modal-content');
 
             /* create a close button, a heading with the pokemon name, paragraph for pokemon height,
             and an image of the pokemon. */
             modalChild.appendChild(closeButtonElement);
             modalChild.lastElementChild.setAttribute('type', "button")
-            modalChild.lastElementChild.classList.add('modal-close')
             modalChild.lastElementChild.classList.add('close');
             modalChild.lastElementChild.setAttribute('data-dismiss', "modal");
             modalChild.lastElementChild.setAttribute('aria-label', "Close");
@@ -255,8 +251,8 @@ let modalIIFE= (function (){
             modalChild.lastElementChild.innerText= 'Height: '+ pokemon.height;
             imageCreate.src= pokemon.imageUrl;
             modalChild.appendChild(imageCreate);
-            imageCreate.classList.add()
-
+            imageCreate.classList.add('modal-content');
+            imageCreate.setAttribute('id', "my-image")
 
             // add a class to the div to be the details visible for the user
             modal.classList.add('is-visible');
@@ -270,7 +266,7 @@ let modalIIFE= (function (){
                 }; 
             })
 
-            // click on the button again
+            // click on the button again to open modal window immediately
             let buttonActivate= modalContainer.querySelector('.btn-block')
             buttonActivate.click();
 
@@ -280,11 +276,14 @@ let modalIIFE= (function (){
 
         } else {
             let modal= modalContainer.querySelector('.modal');
+
+            // set ID to open modal on 'buttonActivate.click()'
             modal.setAttribute('id', "exampleModal");
             let buttonActivate= modalContainer.querySelector('.btn-block')
             if (modal.classList.contains('is-visible')) {
                 // leave this empty! (prevent 'buttonActivate.click()' activation endlessly)
             } else {
+                // click on the button again to open modal window immediately
             buttonActivate.click();
             modal.classList.add('is-visible');
             }
@@ -293,8 +292,12 @@ let modalIIFE= (function (){
 
     function hideModal() {
         let modalContainer= document.querySelector('.modal-container');
+
+        // remove class 'is-visible' to hide modal window
         let activeModal= document.querySelector('.is-visible');
         activeModal.classList.remove('is-visible');
+
+        // remove 'id="exampleModal" and 'class="modal-container" to prevent to stuck at the first opened modal window
         let exampleModal= document.getElementById('exampleModal');
         exampleModal.removeAttribute('id');
         modalContainer.classList.remove('modal-container');
@@ -323,6 +326,7 @@ window.addEventListener('keydown', (e) => {
     }
 })
 
+//add an event listener to the search button to prevent default function and use 'searchPokemon()' function
 let searchButton= document.querySelector('.submit-button')
 
 searchButton.addEventListener('click', (e) => {
@@ -330,6 +334,7 @@ searchButton.addEventListener('click', (e) => {
     pokemonRepository.searchPokemon();
 })
 
+// add event listener to search bar to prevent default function after pressing 'Enter' and use 'searchPokemon()' function 
 searchButton.addEventListener('keydown', (e) => {
     let input= document.querySelector('.search-input');
     if (input.key=== 'Enter') {
