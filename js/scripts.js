@@ -273,10 +273,6 @@ let modalIIFE= (function (){
             let buttonActivate= modalContainer.querySelector('.btn-block')
             buttonActivate.click();
 
-            // removes '.modal-container' and '#exampleModal' from the selected div -> classes can be used to navigate on the site
-            
-            console.log(exampleModal);
-
         } else {
             let modal= modalContainer.querySelector('.modal');
 
