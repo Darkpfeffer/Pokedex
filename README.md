@@ -16,4 +16,4 @@ Framework: Bootstrap
 
 Source: https://pokeapi.co/ , https://getbootstrap.com/
 
-** Thank you for checking out my pokédex! **
+**Thank you for checking out my pokédex!**
