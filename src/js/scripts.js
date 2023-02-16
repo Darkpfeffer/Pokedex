@@ -27,8 +27,8 @@ let pokemonRepository= (function() {
         let buttonSelect= pokemonListFolder.lastElementChild.querySelector('button');
         buttonSelect.classList.add('btn-block');
         buttonSelect.classList.add('btn-primary');
-        buttonSelect.setAttribute('data-toggle', "modal")
-        buttonSelect.setAttribute('data-target', "#exampleModal")
+        buttonSelect.setAttribute('data-toggle', 'modal')
+        buttonSelect.setAttribute('data-target', '#exampleModal')
         buttonSelect.parentElement.classList.add('col-xl-3');
         buttonSelect.parentElement.classList.add('col-lg-4');
         buttonSelect.parentElement.classList.add('col-md-6');
@@ -173,7 +173,6 @@ let pokemonRepository= (function() {
         let input= document.querySelector('.search-input');
         let pokemonList2= document.querySelector('.pokemon-list')
         let pokemonElements= pokemonList2.getElementsByTagName('li')
-        let hiddenListItem= document.querySelectorAll('.hide')
         for (let i=0; i< pokemonElements.length; i++) {
             pokemonElements[i].classList.remove('hide')
         }
@@ -186,7 +185,7 @@ let pokemonRepository= (function() {
                 pokemonElements[i].classList.add('hide')
             }
         }        
-    };
+    }
 
     return {
         add: add,
@@ -221,15 +220,15 @@ let modalIIFE= (function (){
             modalContainer.appendChild(divCreate);
             modalContainer.lastElementChild.classList.add('modal');
             let modal= modalContainer.querySelector('.modal');
-            modal.setAttribute('tabindex', "-1");
-            modal.setAttribute('role', "dialog");
-            modal.setAttribute('id', "exampleModal");
+            modal.setAttribute('tabindex', '-1');
+            modal.setAttribute('role', 'dialog');
+            modal.setAttribute('id', 'exampleModal');
 
             // create second div for Bootstrap modal
             modal.appendChild(divCreate2);
             modal.lastElementChild.classList.add('modal-dialog');
             let modalSecond= modal.querySelector('.modal-dialog');
-            modalSecond.setAttribute('role', "document");
+            modalSecond.setAttribute('role', 'document');
 
             // create a third div for CSS purposes
             modalSecond.appendChild(divCreate3);
@@ -239,10 +238,10 @@ let modalIIFE= (function (){
             /* create a close button, a heading with the pokemon name, paragraph for pokemon height,
             and an image of the pokemon. */
             modalChild.appendChild(closeButtonElement);
-            modalChild.lastElementChild.setAttribute('type', "button")
+            modalChild.lastElementChild.setAttribute('type', 'button')
             modalChild.lastElementChild.classList.add('close');
-            modalChild.lastElementChild.setAttribute('data-dismiss', "modal");
-            modalChild.lastElementChild.setAttribute('aria-label', "Close");
+            modalChild.lastElementChild.setAttribute('data-dismiss', 'modal');
+            modalChild.lastElementChild.setAttribute('aria-label', 'Close');
             modalChild.lastElementChild.innerHTML='<span aria-hidden="true">&times;</span>';
             modalChild.lastElementChild.innerText='Close';
             modalChild.lastElementChild.addEventListener('click', hideModal);
@@ -255,7 +254,7 @@ let modalIIFE= (function (){
             imageCreate.src= pokemon.imageUrl;
             modalChild.appendChild(imageCreate);
             imageCreate.classList.add('modal-content');
-            imageCreate.setAttribute('id', "my-image")
+            imageCreate.setAttribute('id', 'my-image')
 
             // add a class to the div to be the details visible for the user
             modal.classList.add('is-visible');
@@ -266,7 +265,7 @@ let modalIIFE= (function (){
                 let target= e.target;
                 if(target=== activeModal) {
                     hideModal();
-                }; 
+                } 
             })
 
             // click on the button again to open modal window immediately
@@ -277,7 +276,7 @@ let modalIIFE= (function (){
             let modal= modalContainer.querySelector('.modal');
 
             // set ID to open modal on 'buttonActivate.click()'
-            modal.setAttribute('id', "exampleModal");
+            modal.setAttribute('id', 'exampleModal');
             let buttonActivate= modalContainer.querySelector('.btn-block')
             if (modal.classList.contains('is-visible')) {
                 // leave this empty! (prevent 'buttonActivate.click()' activation endlessly)
