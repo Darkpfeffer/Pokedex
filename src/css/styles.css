@@ -76,6 +76,23 @@ body {
 
 .my-content {
     margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+footer {
+    background-image: inherit;
+    padding: 15px;
+    border-top: 2px solid rgba(0, 0, 0, 1);
+}
+
+.page-footer {
+    text-align: center;
+    margin-top: auto;
+}
+
+.link-logo {
+    width: 30px;
+    height: 30px;
 }
 
 /* Navbar styling */ 
