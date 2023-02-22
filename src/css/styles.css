@@ -74,10 +74,14 @@ body {
     border: none;
 }
 
+.my-content {
+    margin-top: 70px;
+}
+
 /* Navbar styling */ 
 
 .navbar {
-    margin: 0px;
+    background-image: inherit;
     padding: 2px;
     border-bottom: 2px solid rgba(0, 0, 0, 1);
 }
@@ -85,8 +89,6 @@ body {
 .navbar-icon {
     width: 50px;
 }
-
-
 
 /* search engine */
 
