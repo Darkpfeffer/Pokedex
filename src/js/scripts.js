@@ -229,7 +229,7 @@ let modalIIFE= (function (){
             imageCreate.src= pokemon.imageUrl;
             modalChild.appendChild(imageCreate);
             imageCreate.classList.add('modal-content');
-            imageCreate.setAttribute('id', 'my-image')
+            imageCreate.setAttribute('id', 'modal-image');
 
             // add a class to the div to be the details visible for the user
             modal.classList.add('is-visible');
