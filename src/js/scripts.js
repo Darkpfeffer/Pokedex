@@ -177,6 +177,7 @@ let modalIIFE= (function (){
         let divCreate= document.createElement('div');
         let divCreate2= document.createElement('div');
         let divCreate3= document.createElement('div');
+        let divCreate4= document.createElement('div');
         let headingCreate= document.createElement('h1');
         let imageCreate= document.createElement('img');
         let paragraphCreate= document.createElement('p');
@@ -208,17 +209,20 @@ let modalIIFE= (function (){
 
             /* create a close button, a heading with the pokemon name, paragraph for pokemon height,
             and an image of the pokemon. */
-            modalChild.appendChild(closeButtonElement);
-            modalChild.lastElementChild.setAttribute('type', 'button')
-            modalChild.lastElementChild.classList.add('close');
-            modalChild.lastElementChild.setAttribute('data-dismiss', 'modal');
-            modalChild.lastElementChild.setAttribute('aria-label', 'Close');
-            modalChild.lastElementChild.innerHTML='<span aria-hidden="true">&times;</span>';
-            modalChild.lastElementChild.innerText='Close';
-            modalChild.lastElementChild.addEventListener('click', hideModal);
-            modalChild.appendChild(headingCreate);
-            headingCreate.classList.add('modal-title');
-            modalChild.lastElementChild.innerText= 'Name: '+ pokemon.name;
+            modalChild.appendChild(divCreate4);
+            modalChild.lastElementChild.classList.add('modal-header');
+            let modalHeader= modalChild.querySelector('.modal-header');
+            modalHeader.appendChild(headingCreate);
+            modalHeader.classList.add('modal-title');
+            modalHeader.lastElementChild.innerText= 'Name: '+ pokemon.name;
+            modalHeader.appendChild(closeButtonElement);
+            modalHeader.lastElementChild.setAttribute('type', 'button')
+            modalHeader.lastElementChild.classList.add('close');
+            modalHeader.lastElementChild.setAttribute('data-dismiss', 'modal');
+            modalHeader.lastElementChild.setAttribute('aria-label', 'Close');
+            modalHeader.lastElementChild.innerHTML='<span aria-hidden="true">&times;</span>';
+            modalHeader.lastElementChild.innerText='Close';
+            modalHeader.lastElementChild.addEventListener('click', hideModal);
             modalChild.appendChild(paragraphCreate);
             paragraphCreate.classList.add('modal-content')
             modalChild.lastElementChild.innerText= 'Height: '+ pokemon.height;
