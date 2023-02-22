@@ -34,76 +34,47 @@ let pokemonRepository= (function() {
         buttonSelect.parentElement.classList.add('col-md-6');
 
         // Add classes for CSS purposes
+        const dualTypeMap = {
+            'bug_grass': 'grassBug',
+            'bug_poison': 'bugPoison',
+            'electric_steel': 'electricSteel',
+            'fairy_normal': 'normalFairy',
+            'fairy_psychic': 'psychicFairy',
+            'fighting_water': 'waterFighting',
+            'ghost_poison': 'poisonGhost',
+            'grass_poison': 'grassPoison',
+            'grass_psychic': 'psychicGrass',
+            'ground_poison': 'poisonGround',
+            'ground_rock': 'groundRock',
+            'ice_psychic': 'psychicIce',
+            'ice_water': 'iceWater',
+            'poison_water': 'poisonWater',
+            'psychic_water': 'psychicWater',
+            'rock_water': 'rockWater',
+            // 'flying class will be deleted
+            'fire_flying': 'fire',
+            'bug_flying': 'bug',
+            'flying_normal': 'normal',
+            'flying_poison': 'poison',
+            'flying_water': 'water',
+            'flying_rock': 'rock',
+            'flying_ice': 'ice',
+            'electric_flying': 'electric',
+            'dragon_flying': 'dragon'
+        };
         loadTypes(pokemon).then(function() {
-            let pokemonTypes= pokemon.types
+            let pokemonTypes= pokemon.types;
+            let pokemonTypes2 = pokemon.types.map(type => type.type.name);
             pokemonTypes.forEach(function(item) {
                 let itemType= item.type;
                 let itemName= itemType.name;
-                buttonSelect.classList.add(itemName);
-                if (buttonSelect.classList.contains('grass') && buttonSelect.classList.contains('poison')) {
-                    buttonSelect.classList.remove('grass');
-                    buttonSelect.classList.remove('poison');
-                    buttonSelect.classList.add('grassPoison');
-                }else if (buttonSelect.classList.contains('bug') && buttonSelect.classList.contains('poison')) {
-                    buttonSelect.classList.remove('bug');
-                    buttonSelect.classList.remove('poison');
-                    buttonSelect.classList.add('bugPoison')
-                }else if (buttonSelect.classList.contains('ground') && buttonSelect.classList.contains('poison')) {
-                    buttonSelect.classList.remove('ground');
-                    buttonSelect.classList.remove('poison');
-                    buttonSelect.classList.add('poisonGround')
-                }else if (buttonSelect.classList.contains('normal') && buttonSelect.classList.contains('fairy')){
-                    buttonSelect.classList.remove('normal');
-                    buttonSelect.classList.remove('fairy');
-                    buttonSelect.classList.add('normalFairy')
-                }else if (buttonSelect.classList.contains('bug') && buttonSelect.classList.contains('grass')){
-                    buttonSelect.classList.remove('bug');
-                    buttonSelect.classList.remove('grass');
-                    buttonSelect.classList.add('grassBug')
-                }else if (buttonSelect.classList.contains('water') && buttonSelect.classList.contains('poison')){
-                    buttonSelect.classList.remove('water');
-                    buttonSelect.classList.remove('poison');
-                    buttonSelect.classList.add('poisonWater')
-                }else if (buttonSelect.classList.contains('rock') && buttonSelect.classList.contains('ground')){
-                    buttonSelect.classList.remove('rock');
-                    buttonSelect.classList.remove('ground');
-                    buttonSelect.classList.add('groundRock')
-                }else if (buttonSelect.classList.contains('water') && buttonSelect.classList.contains('psychic')){
-                    buttonSelect.classList.remove('water');
-                    buttonSelect.classList.remove('psychic');
-                    buttonSelect.classList.add('psychicWater')
-                }else if (buttonSelect.classList.contains('electric') && buttonSelect.classList.contains('steel')){
-                    buttonSelect.classList.remove('electric');
-                    buttonSelect.classList.remove('steel');
-                    buttonSelect.classList.add('electricSteel')
-                }else if (buttonSelect.classList.contains('water') && buttonSelect.classList.contains('ice')){
-                    buttonSelect.classList.remove('water');
-                    buttonSelect.classList.remove('ice');
-                    buttonSelect.classList.add('iceWater')
-                }else if (buttonSelect.classList.contains('ghost') && buttonSelect.classList.contains('poison')){
-                    buttonSelect.classList.remove('ghost');
-                    buttonSelect.classList.remove('poison');
-                    buttonSelect.classList.add('poisonGhost')
-                }else if (buttonSelect.classList.contains('grass') && buttonSelect.classList.contains('psychic')){
-                    buttonSelect.classList.remove('grass');
-                    buttonSelect.classList.remove('psychic');
-                    buttonSelect.classList.add('psychicGrass')
-                }else if (buttonSelect.classList.contains('psychic') && buttonSelect.classList.contains('fairy')){
-                    buttonSelect.classList.remove('psychic');
-                    buttonSelect.classList.remove('fairy');
-                    buttonSelect.classList.add('psychicFairy')
-                }else if (buttonSelect.classList.contains('ice') && buttonSelect.classList.contains('psychic')){
-                    buttonSelect.classList.remove('ice');
-                    buttonSelect.classList.remove('psychic');
-                    buttonSelect.classList.add('psychicIce')
-                }else if (buttonSelect.classList.contains('rock') && buttonSelect.classList.contains('water')){
-                    buttonSelect.classList.remove('rock');
-                    buttonSelect.classList.remove('water');
-                    buttonSelect.classList.add('rockWater')
-                }else if (buttonSelect.classList.contains('flying')) {
-                    buttonSelect.classList.remove('flying');
-                }else {
-                    console.log('classification complete')
+
+                if (pokemonTypes.length === 1) {
+                    buttonSelect.classList.add(itemName);
+                } else if (pokemonTypes.length === 2) {
+                    let dualType = pokemonTypes2.sort().join('_');
+                    newClassName = dualTypeMap[dualType];
+                    buttonSelect.classList.add(newClassName);
                 }
             })
         })

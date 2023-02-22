@@ -148,6 +148,10 @@ img {
     background-image: linear-gradient(to right, var(--ground), var(--groundOpacity));
 }
 
+.ice {
+    background-image: linear-gradient(to right, var(--ice), var(--iceOpacity));
+}
+
 .normal {
     background-image:linear-gradient(to right, var(--normal), var(--normalOpacity));
 }
@@ -238,6 +242,9 @@ img {
     color: #fff;
 }
 
+.waterFighting {
+    background-image:linear-gradient(to right, var(--water), var(--waterOpacity), var(--fighting), var(--fightingOpacity));
+}
 /* Media queries for accessibility purposes */
 
 @media all and (max-width: 575px) {
