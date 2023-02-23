@@ -47,10 +47,31 @@ body {
     border: none;
 }
 
+.my-content {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+footer {
+    background-image: inherit;
+    padding: 5px;
+    border-top: 2px solid rgba(0, 0, 0, 1);
+}
+
+.page-footer {
+    text-align: center;
+    margin-top: auto;
+}
+
+.link-logo {
+    width: 30px;
+    height: 30px;
+}
+
 /* Navbar styling */ 
 
 .navbar {
-    margin: 0px;
+    background-image: inherit;
     padding: 2px;
     border-bottom: 2px solid rgba(0, 0, 0, 1);
 }
@@ -58,8 +79,6 @@ body {
 .navbar-icon {
     width: 50px;
 }
-
-
 
 /* search engine */
 
@@ -75,11 +94,12 @@ body {
     background-image: linear-gradient(to right, rgba(233, 209, 53, 1), rgba(250, 250, 250, 1));
 }
 
-img {
+#modal-image {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
     max-width: 250px;
+    margin-bottom: 20px;
 }
 
 .close{
@@ -139,6 +159,12 @@ img {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(226, 191, 101, 1)), to(rgba(143, 121, 66, 1)));
     background-image: -o-linear-gradient(left, rgba(226, 191, 101, 1), rgba(143, 121, 66, 1));
     background-image: linear-gradient(to right, rgba(226, 191, 101, 1), rgba(143, 121, 66, 1));
+}
+
+.ice {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(150, 217, 214, 1)), to(rgba(203, 251, 249, 1)));
+    background-image: -o-linear-gradient(left, rgba(150, 217, 214, 1), rgba(203, 251, 249, 1));
+    background-image: linear-gradient(to right, rgba(150, 217, 214, 1), rgba(203, 251, 249, 1));
 }
 
 .normal {
@@ -271,6 +297,11 @@ img {
     color: #fff;
 }
 
+.waterFighting {
+    background-image:-webkit-gradient(linear, left top, right top, from(rgba(14, 126, 154, 1)), color-stop(rgba(11, 83, 102, 1)), color-stop(rgba(194, 46, 40, 1)), to(rgba(134, 27, 24, 1)));
+    background-image:-o-linear-gradient(left, rgba(14, 126, 154, 1), rgba(11, 83, 102, 1), rgba(194, 46, 40, 1), rgba(134, 27, 24, 1));
+    background-image:linear-gradient(to right, rgba(14, 126, 154, 1), rgba(11, 83, 102, 1), rgba(194, 46, 40, 1), rgba(134, 27, 24, 1));
+}
 /* Media queries for accessibility purposes */
 
 @media all and (max-width: 575px) {
