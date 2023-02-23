@@ -1,6 +1,10 @@
 /* Variables */
 
 :root {
+    /* Background */
+    --background: linear-gradient(to right, rgba(233, 209, 53, 1), rgba(250, 250, 250, 1));
+    --background-darker: linear-gradient(to left, rgba(157, 132, 32, 1), rgba(204, 188, 133, 1)); 
+    /* Pokémon */
     --bug: rgba(166, 185, 26, 1);
     --bugOpacity: rgba(57, 61, 26, 1);
     --dragon: rgba(111, 53, 252, 1);
@@ -39,7 +43,7 @@
 /* Default stylings */
 
 body {
-    background-image: linear-gradient(to right, rgba(233, 209, 53, 1), rgba(250, 250, 250, 1));
+    background-image: var(--background);
 }
 
 .list-group {
@@ -76,11 +80,12 @@ body {
 
 .my-content {
     margin-top: 70px;
-    margin-bottom: 70px;
+    margin-bottom: 100px;
 }
 
 footer {
-    background-image: inherit;
+    background-image: var(--background-darker);
+    color: #fff;
     padding: 5px;
     border-top: 2px solid rgba(0, 0, 0, 1);
 }
@@ -98,7 +103,7 @@ footer {
 /* Navbar styling */ 
 
 .navbar {
-    background-image: inherit;
+    background-image: var(--background-darker);
     padding: 2px;
     border-bottom: 2px solid rgba(0, 0, 0, 1);
 }
