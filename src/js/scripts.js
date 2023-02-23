@@ -97,6 +97,7 @@ let pokemonRepository= (function() {
     //Load pokemon data from external API
 
     function loadList() {
+        showLoadingMessage();
         return fetch(apiUrl).then(function (response) {
             return response.json();
         }).then(function (json) {
@@ -158,6 +159,18 @@ let pokemonRepository= (function() {
         }        
     }
 
+    function showLoadingMessage() {
+       let loadingScreen= document.querySelector('.loading-screen');
+       loadingScreen.classList.remove('not-visible');
+       loadingScreen.classList.add('visible');
+    }
+
+    function hideLoadingMessage() {
+        let loadingScreen= document.querySelector('.loading-screen');
+       loadingScreen.classList.remove('visible');
+       loadingScreen.classList.add('not-visible');
+    }
+
     return {
         add: add,
         getAll: getAll,
@@ -166,7 +179,9 @@ let pokemonRepository= (function() {
         loadList: loadList,
         loadDetails: loadDetails,
         loadTypes: loadTypes,
-        searchPokemon: searchPokemon
+        searchPokemon: searchPokemon,
+        showLoadingMessage: showLoadingMessage,
+        hideLoadingMessage: hideLoadingMessage
     }
 
 })();
@@ -283,13 +298,13 @@ let modalIIFE= (function (){
 })();
 
 // Loop to create a button with each pokémon the 'pokemonList' contains
-
 pokemonRepository.loadList().then(function() {
     pokemonRepository.getAll().forEach(function(pokemon) {
     
         pokemonRepository.addListItem(pokemon);
 
     });
+    setTimeout(pokemonRepository.hideLoadingMessage, 150);
 });
 
 // add an event listener for hide the modal if 'Escape' button have been pressed

@@ -14,13 +14,14 @@
             crossorigin="anonymous">
 
         <!-- Link to the self written CSS and Postprocessed CSS -->
-        <!-- <link rel="stylesheet" type="text/css" href="dist/css/styles.production-minified.css"> -->
+        <link rel="stylesheet" type="text/css" href="dist/css/styles.production-minified.css">
 
         <!-- Comment out CSS files (there's a minified version of it), delete comment when apply changes-->
         <!-- <link rel="stylesheet" type="text/css" href="dist/css/styles.production.css"> -->
-        <link rel="stylesheet" type="text/css" href="src/css/styles.css">
+        <!-- <link rel="stylesheet" type="text/css" href="src/css/styles.css"> -->
     </head>
     <body>
+      <!-- Navigation List -->
         <nav class="navbar navbar-expand-sm navbar-light fixed-top">
             <img class="navbar-icon" src="img/pokeball.png" rel="Icon">
             <a class="navbar-brand navbar-link" href="index.html">Pokédex</a>
@@ -35,6 +36,8 @@
               </form>
             </div>
           </nav>
+
+      <!-- place for content -->
         <div class="my-content">
             <ul class="list-group container">
               <div class="pokemon-list row">
@@ -43,6 +46,14 @@
             </ul>
         </div>
 
+      <!-- Loading screen -->
+        <div class="loading-screen not-visible">
+          <div class="loading-modal">
+            <img src="img/Loading_gif.gif" alt="Loading gif" class="loading-gif">
+          </div>
+        </div>
+
+      <!-- Footer -->
         <footer class="page-footer fixed-bottom">
           <p class="page-footer__item">Find me on:</p>
             <nav class="page-footer__item">
@@ -76,8 +87,8 @@
         </script>
 
         <!-- Self written JS link -->
-        <!-- <script src="dist/js/scripts-minified.js"></script> -->
+        <script src="dist/js/scripts-minified.js"></script>
         <!-- Comment out js file (minified is loaded), delete comment if apply changes-->
-        <script src="src/js/scripts.js"></script>
+        <!-- <script src="src/js/scripts.js"></script> -->
     </body>
 </html>

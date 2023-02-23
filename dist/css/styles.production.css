@@ -49,11 +49,14 @@ body {
 
 .my-content {
     margin-top: 70px;
-    margin-bottom: 70px;
+    margin-bottom: 100px;
 }
 
 footer {
-    background-image: inherit;
+    background-image: -webkit-gradient(linear, right top, left top, from(rgba(157, 132, 32, 1)), to(rgba(204, 188, 133, 1)));
+    background-image: -o-linear-gradient(right, rgba(157, 132, 32, 1), rgba(204, 188, 133, 1));
+    background-image: linear-gradient(to left, rgba(157, 132, 32, 1), rgba(204, 188, 133, 1));
+    color: #fff;
     padding: 5px;
     border-top: 2px solid rgba(0, 0, 0, 1);
 }
@@ -68,10 +71,45 @@ footer {
     height: 30px;
 }
 
+/* Loading screen */
+.visible {
+    position: fixed;
+    padding: 0px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+
+    /*show it above other content */
+    z-index: 999;
+
+    /*center the modal */
+    display: -ms-grid;
+    display: grid;
+    text-align: center;
+}
+
+.loading-modal {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+}
+
+.loading-gif {
+    width: 80px;
+}
+
+.not-visible {
+    display: none;
+}
+
 /* Navbar styling */ 
 
 .navbar {
-    background-image: inherit;
+    background-image: -webkit-gradient(linear, right top, left top, from(rgba(157, 132, 32, 1)), to(rgba(204, 188, 133, 1)));
+    background-image: -o-linear-gradient(right, rgba(157, 132, 32, 1), rgba(204, 188, 133, 1));
+    background-image: linear-gradient(to left, rgba(157, 132, 32, 1), rgba(204, 188, 133, 1));
     padding: 2px;
     border-bottom: 2px solid rgba(0, 0, 0, 1);
 }
