@@ -73,7 +73,7 @@ let pokemonRepository= (function() {
                     buttonSelect.classList.add(itemName);
                 } else if (pokemonTypes.length === 2) {
                     let dualType = pokemonTypes2.sort().join('_');
-                    newClassName = dualTypeMap[dualType];
+                    let newClassName = dualTypeMap[dualType];
                     buttonSelect.classList.add(newClassName);
                 }
             })
