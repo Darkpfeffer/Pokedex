@@ -9,12 +9,12 @@ You can click the buttons to see the pokémon's height and an image of it. The m
 
 With the use of the search bar, you can search for a specific pokémon. Write in the name (or just a part of it), then press 'Enter' or click the 'Search' button. If you want to have all the pokémons again, clear the search bar (by pressing 'Escape' or the 'X' button) and press 'Enter' or the 'Search' button again.
 
-### Used resources:
-
-Syntaxes: HTML, CSS, JavaScript
-
-Framework: Bootstrap
-
-Source: https://pokeapi.co/ , https://getbootstrap.com/
+### Tools I used:
+- HTML
+- CSS
+- JavaScript
+- UI Framework: 
+    * Bootstrap
+- API: https://pokeapi.co/ , https://getbootstrap.com/
 
 **Thank you for checking out my pokédex!**
