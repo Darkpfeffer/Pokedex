@@ -1,6 +1,6 @@
 ## Pokédex (Project requirement at CareerFoundry)
 
-This is a Javascript app, where I use an external API to get 150 pokémons from the list. With this link you can go directly to the site: https://darkpfeffer.github.io/Pokedex/ . Or you can start 'index.html' if you have the files locally.
+This is a Javascript app, where I use an external API to get 150 pokémons from the database. With this link you can go directly to the site: https://darkpfeffer.github.io/Pokedex/ . Or you can start 'index.html' if you have the files locally.
 
 
 ### How to use the site:
@@ -15,6 +15,6 @@ With the use of the search bar, you can search for a specific pokémon. Write in
 - JavaScript
 - UI Framework: 
     * Bootstrap
-- API: https://pokeapi.co/ , https://getbootstrap.com/
+- API: https://pokeapi.co/
 
 **Thank you for checking out my pokédex!**
